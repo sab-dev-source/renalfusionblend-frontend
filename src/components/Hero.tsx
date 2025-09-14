@@ -1,5 +1,6 @@
 import { ArrowRight, Shield, Award, Users, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { MedicalCarousel } from "./MedicalCarousel";
 
 export const Hero = () => {
   const trustStats = [
@@ -72,55 +73,17 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Hero Visual */}
-          <div className="relative lg:pl-8">
+          {/* Hero Visual - Medical Carousel */}
+          <div className="relative lg:pl-8 z-10">
             <div className="relative">
-              {/* Background Elements */}
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20"></div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/30 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/30 rounded-full blur-2xl"></div>
+              {/* Enhanced Background Elements */}
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10"></div>
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '4s'}}></div>
               
-              {/* Content Cards */}
-              <div className="relative p-8 space-y-6">
-                {/* Medical Quality Card */}
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                      <Shield className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">Medical Grade Quality</h3>
-                      <p className="text-sm text-muted-foreground">FDA registered & healthcare approved</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* AI Assistant Card */}
-                <div className="bg-white rounded-xl p-6 shadow-lg ml-8">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-accent to-accent-hover rounded-lg flex items-center justify-center">
-                      <Award className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">AI Health Assistant</h3>
-                      <p className="text-sm text-muted-foreground">24/7 symptom guidance & support</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Certification Card */}
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-accent rounded-lg flex items-center justify-center">
-                      <Users className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">Professional Courses</h3>
-                      <p className="text-sm text-muted-foreground">Certified medical education</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Medical Image Carousel */}
+              <MedicalCarousel />
             </div>
           </div>
         </div>

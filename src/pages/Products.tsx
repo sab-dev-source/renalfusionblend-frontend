@@ -4,6 +4,7 @@ import { Layout } from "../components/Layout";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { ProductCard } from "../components/ProductCard";
+import { CommunityCarousel } from "../components/CommunityCarousel";
 import { wheyProteinProducts } from "../data/products";
 
 export default function Products() {
@@ -40,6 +41,9 @@ export default function Products() {
             Filters
           </Button>
         </div>
+
+        {/* Community Carousel */}
+        <CommunityCarousel />
 
         {/* Products Grid */}
         {filteredProducts.length > 0 ? (

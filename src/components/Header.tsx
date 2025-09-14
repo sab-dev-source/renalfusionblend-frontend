@@ -26,7 +26,7 @@ export const Header = () => {
     { title: "Books", icon: BookOpen, href: "/books" },
     { title: "AI Assistant", icon: Bot, href: "/ai-assistant" },
     { type: "separator" },
-    { title: "Login", icon: User, href: "/login" },
+    { title: "Login", icon: User, href: "/contact" },
   ] as any;
 
   const handleNavigation = (href: string) => {
@@ -146,7 +146,7 @@ export const Header = () => {
               
               <div className="flex flex-col space-y-2 pt-4 border-t border-card-border">
                 <Link
-                  to="/login"
+                  to="/contact"
                   className="flex items-center space-x-2 btn-outline text-sm justify-center py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >

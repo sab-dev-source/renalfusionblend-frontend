@@ -158,10 +158,10 @@ const Courses = () => {
                       </div>
                     </div>
                     
-                    <button className="w-full btn-outline text-sm">
+                    <Link to="/ai-assistant" className="w-full btn-outline text-sm inline-flex items-center justify-center">
                       <Play className="h-4 w-4 mr-2" />
                       Preview Course
-                    </button>
+                    </Link>
 
                     {/* Course Stats */}
                     <div className="space-y-2 text-sm text-muted-foreground">
@@ -235,9 +235,9 @@ const Courses = () => {
                         </div>
                         
                         <div className="text-right">
-                          <button className="btn-medical text-lg px-8 py-4 mb-2">
+                          <Link to="/checkout" className="btn-medical text-lg px-8 py-4 mb-2 inline-flex items-center justify-center">
                             Enroll Now
-                          </button>
+                          </Link>
                           <div className="flex items-center gap-2 text-sm text-muted-foreground">
                             <Award className="h-4 w-4" />
                             <span>Certificate included</span>

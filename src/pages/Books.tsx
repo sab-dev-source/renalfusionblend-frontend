@@ -229,9 +229,9 @@ const Books = () => {
                     <div className="bg-muted rounded-lg p-4">
                       <h4 className="font-medium text-foreground mb-2">Preview</h4>
                       <p className="text-sm text-muted-foreground italic">{book.preview}</p>
-                      <button className="text-primary text-sm font-medium mt-2 hover:underline">
+                      <Link to="/contact" className="text-primary text-sm font-medium mt-2 hover:underline">
                         Read full preview →
-                      </button>
+                      </Link>
                     </div>
 
                     {/* Purchase Options */}
@@ -244,10 +244,10 @@ const Books = () => {
                             <span className="text-2xl font-bold text-primary">${book.price.physical}</span>
                           </div>
                           <p className="text-sm text-muted-foreground">{book.format}</p>
-                          <button className="w-full btn-medical">
+                          <Link to="/cart" className="w-full btn-medical inline-flex items-center justify-center">
                             <ShoppingCart className="h-4 w-4 mr-2" />
                             Order Hard Copy
-                          </button>
+                          </Link>
                         </div>
 
                         {/* Digital Copy */}
@@ -257,10 +257,10 @@ const Books = () => {
                             <span className="text-2xl font-bold text-accent">${book.price.digital}</span>
                           </div>
                           <p className="text-sm text-muted-foreground">Instant PDF download</p>
-                          <button className="w-full btn-accent">
+                          <Link to="/checkout" className="w-full btn-accent inline-flex items-center justify-center">
                             <Download className="h-4 w-4 mr-2" />
                             Download Soft Copy
-                          </button>
+                          </Link>
                         </div>
 
                         {/* Audio Copy (Second Edition Only) */}
@@ -277,10 +277,10 @@ const Books = () => {
                               </div>
                             </div>
                             <p className="text-sm text-muted-foreground">Professional narration</p>
-                            <button className="w-full bg-gradient-to-r from-success to-accent text-white font-medium py-2 px-4 rounded-md hover:shadow-lg transition-all duration-200">
+                            <Link to="/checkout" className="w-full bg-gradient-to-r from-success to-accent text-white font-medium py-2 px-4 rounded-md hover:shadow-lg transition-all duration-200 inline-flex items-center justify-center">
                               <Headphones className="h-4 w-4 mr-2" />
                               Get Audiobook - 33% OFF
-                            </button>
+                            </Link>
                             <p className="text-xs text-success text-center font-medium">
                               ⚡ World-class narration experience
                             </p>

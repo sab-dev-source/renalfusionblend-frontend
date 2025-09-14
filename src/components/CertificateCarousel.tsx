@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from './ui/badge';
 import { Award, Download, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import nephologyNutritionCert from '../assets/certificates/nephrology-nutrition-specialist.png';
 import kidneyHealthWellnessCert from '../assets/certificates/kidney-health-wellness.png';
 import advancedHealthNutritionCert from '../assets/certificates/advanced-health-nutrition.png';
@@ -170,9 +171,9 @@ export const CertificateCarousel = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <button className="btn-medical text-lg w-full lg:w-auto px-8 py-4">
+                  <Link to="/courses" className="btn-medical text-lg w-full lg:w-auto px-8 py-4 inline-flex items-center justify-center">
                     {certificateData[currentIndex].cta}
-                  </button>
+                  </Link>
                 </motion.div>
               </div>
             </div>
@@ -215,12 +216,12 @@ export const CertificateCarousel = () => {
               Join thousands of healthcare professionals who have earned accredited certifications
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="btn-medical px-6 py-3">
+              <Link to="/courses" className="btn-medical px-6 py-3">
                 View All Courses
-              </button>
-              <button className="btn-outline px-6 py-3">
+              </Link>
+              <Link to="/contact" className="btn-outline px-6 py-3">
                 Download Sample Certificate
-              </button>
+              </Link>
             </div>
           </div>
         </div>

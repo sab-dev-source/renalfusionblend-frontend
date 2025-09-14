@@ -1,18 +1,34 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, Shield, Heart, Award, BookOpen, Bot, ChevronDown, Dumbbell, User } from "lucide-react";
-import { ExpandableTabs } from "./ui/expandable-tabs";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, X, Shield, Heart, Award, BookOpen, Bot, Dumbbell, User } from "lucide-react";
+import { HoverExpandableTabs } from "./ui/expandable-tabs";
 import renalFusionLogo from "../assets/renal-fusion-logo.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const tabs = [
-    { title: "Courses", icon: Award },
-    { title: "Books", icon: BookOpen },
-    { title: "AI Assistant", icon: Bot },
-  ];
+  const navigationTabs = [
+    {
+      title: "Products",
+      icon: Heart,
+      type: "dropdown",
+      dropdownItems: [
+        { title: "Whey Proteins", icon: Dumbbell, href: "/products" },
+        { title: "Medical Equipment", icon: Shield, href: "/medical" },
+      ],
+    },
+    { type: "separator" },
+    { title: "Courses", icon: Award, href: "/courses" },
+    { title: "Books", icon: BookOpen, href: "/books" },
+    { title: "AI Assistant", icon: Bot, href: "/ai-assistant" },
+    { type: "separator" },
+    { title: "Login", icon: User, href: "/login" },
+  ] as any;
+
+  const handleNavigation = (href: string) => {
+    navigate(href);
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-card-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -25,57 +41,24 @@ export const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {/* Products Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                <Heart className="h-4 w-4" />
-                <span>Products</span>
-                <ChevronDown className="h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-48">
-                <DropdownMenuItem asChild>
-                  <Link to="/products" className="flex items-center space-x-2">
-                    <Dumbbell className="h-4 w-4" />
-                    <span>Whey Proteins</span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/medical" className="flex items-center space-x-2">
-                    <Shield className="h-4 w-4" />
-                    <span>Medical Equipment</span>
-                  </Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/* Expandable Tabs */}
-            <ExpandableTabs 
-              tabs={tabs} 
-              onChange={(index) => {
-                if (index !== null) {
-                  const routes = ['/courses', '/books', '/ai-assistant'];
-                  window.location.href = routes[index];
-                }
-              }}
+          <nav className="hidden md:flex items-center flex-1 justify-center">
+            <HoverExpandableTabs 
+              tabs={navigationTabs}
+              onNavigate={handleNavigation}
+              className="bg-muted/30 rounded-2xl p-2 border border-border/50"
             />
           </nav>
 
-          {/* Login Button */}
-          <div className="hidden md:flex items-center">
-            <button className="flex items-center space-x-2 btn-outline text-sm px-4 py-2">
-              <User className="h-4 w-4" />
-              <span>Login</span>
+          {/* Mobile Menu Toggle - Right Side */}
+          <div className="md:hidden">
+            <button
+              className="p-2 text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-muted-foreground hover:text-primary"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
         </div>
 
         {/* Mobile Menu */}
@@ -104,27 +87,40 @@ export const Header = () => {
               </div>
               
               {/* Other Navigation */}
-              {tabs.map((item) => {
-                const Icon = item.icon;
-                const routes = { 'Courses': '/courses', 'Books': '/books', 'AI Assistant': '/ai-assistant' };
-                return (
-                  <Link
-                    key={item.title}
-                    to={routes[item.title as keyof typeof routes]}
-                    className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span>{item.title}</span>
-                  </Link>
-                );
-              })}
+              <Link
+                to="/courses"
+                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Award className="h-4 w-4" />
+                <span>Courses</span>
+              </Link>
+              <Link
+                to="/books"
+                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <BookOpen className="h-4 w-4" />
+                <span>Books</span>
+              </Link>
+              <Link
+                to="/ai-assistant"
+                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Bot className="h-4 w-4" />
+                <span>AI Assistant</span>
+              </Link>
               
               <div className="flex flex-col space-y-2 pt-4 border-t border-card-border">
-                <button className="flex items-center space-x-2 btn-outline text-sm justify-center">
+                <Link
+                  to="/login"
+                  className="flex items-center space-x-2 btn-outline text-sm justify-center py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   <User className="h-4 w-4" />
                   <span>Login</span>
-                </button>
+                </Link>
               </div>
             </nav>
           </div>

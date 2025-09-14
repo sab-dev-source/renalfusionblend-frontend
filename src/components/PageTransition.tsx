@@ -16,12 +16,12 @@ export const PageTransition = ({ children }: PageTransitionProps) => {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.35, ease: [0.4, 0, 0.2, 1] as const }
+      transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] as const }
     },
     exit: {
       opacity: 0,
       y: -8,
-      transition: { duration: 0.25, ease: [0.4, 0, 0.2, 1] as const }
+      transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] as const }
     }
   };
 
@@ -32,10 +32,10 @@ export const PageTransition = ({ children }: PageTransitionProps) => {
         key={`${location.pathname}-shutter`}
         initial={{ y: 0 }}
         animate={{ y: "-100%" }}
-        transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] as const }}
-        className="fixed inset-0 z-[60] bg-gradient-to-br from-primary via-primary to-primary-dark flex items-center justify-center pointer-events-none"
+        transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] as const }}
+        className="fixed inset-0 z-[60] bg-white flex items-center justify-center pointer-events-none"
       >
-        <img src={renalFusionLogo} alt="Renal Fusion Blend" className="w-20 h-20 md:w-24 md:h-24 drop-shadow" />
+        <img src={renalFusionLogo} alt="Renal Fusion Blend" className="w-32 h-32 md:w-40 md:h-40 drop-shadow-lg" />
       </motion.div>
 
       <motion.div

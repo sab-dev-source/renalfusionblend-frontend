@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Menu, X, Shield, Heart, Award, BookOpen, Bot, Dumbbell, User } from "lucide-react";
+import { Menu, X, Shield, Heart, Award, BookOpen, Bot, Dumbbell, User, ShoppingCart } from "lucide-react";
 import { HoverExpandableTabs } from "./ui/expandable-tabs";
+import { useCart } from "../contexts/CartContext";
+import { Badge } from "./ui/badge";
 import renalFusionLogo from "../assets/renal-fusion-logo.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { getTotalItems, wishlist } = useCart();
 
   const navigationTabs = [
     {
@@ -49,14 +52,43 @@ export const Header = () => {
             />
           </nav>
 
-          {/* Mobile Menu Toggle - Right Side */}
-          <div className="md:hidden">
-            <button
-              className="p-2 text-muted-foreground hover:text-primary transition-colors"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+          {/* Cart and Wishlist Icons */}
+          <div className="flex items-center space-x-4">
+            {/* Wishlist */}
+            <Link
+              to="/wishlist"
+              className="relative p-2 text-muted-foreground hover:text-primary transition-colors"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+              <Heart className="h-5 w-5" />
+              {wishlist.length > 0 && (
+                <Badge variant="destructive" className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center text-xs p-0">
+                  {wishlist.length}
+                </Badge>
+              )}
+            </Link>
+            
+            {/* Cart */}
+            <Link
+              to="/cart"
+              className="relative p-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ShoppingCart className="h-5 w-5" />
+              {getTotalItems() > 0 && (
+                <Badge variant="destructive" className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center text-xs p-0">
+                  {getTotalItems()}
+                </Badge>
+              )}
+            </Link>
+
+            {/* Mobile Menu Toggle */}
+            <div className="md:hidden">
+              <button
+                className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
 
         </div>

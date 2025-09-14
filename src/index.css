@@ -2,41 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Renal Fusion Blend - Medical Grade Design System */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 215 25% 27%;
+    
+    /* Medical Primary - Deep Blue */
+    --primary: 221 100% 53%;  /* #0B5FFF */
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 221 100% 97%;
+    --primary-hover: 221 100% 48%;
+    
+    /* Medical Accent - Teal/Green */
+    --accent: 168 94% 38%;    /* #06B48B */
+    --accent-foreground: 0 0% 100%;
+    --accent-muted: 168 94% 95%;
+    --accent-hover: 168 94% 33%;
+    
+    /* Medical Secondary Colors */
+    --secondary: 215 16% 97%;
+    --secondary-foreground: 215 25% 27%;
+    --secondary-hover: 215 16% 94%;
+    
+    /* Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --card-foreground: 215 25% 27%;
+    --card-border: 215 16% 92%;
+    
+    /* Muted/Text Colors */
+    --muted: 215 16% 97%;
+    --muted-foreground: 215 13% 65%;
+    --text-light: 215 13% 65%;
+    
+    /* Medical Alert Colors */
+    --success: 168 94% 38%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 100% 55%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Interactive Elements */
+    --border: 215 16% 92%;
+    --input: 215 16% 94%;
+    --ring: 221 100% 53%;
+    --focus-ring: 221 100% 53%;
+    
+    /* Elevation & Effects */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-medical: 0 8px 25px -8px rgb(11 95 255 / 0.15);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-hover)));
+    --gradient-medical: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--primary)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    
+    /* Spacing & Layout */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+    --container-max: 1200px;
+    
+    /* Typography Scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -54,43 +96,32 @@ All colors MUST be HSL.
 
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
+  
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Dark mode medical theme */
+    --background: 215 25% 8%;
+    --foreground: 0 0% 98%;
+    --primary: 221 100% 65%;
+    --primary-foreground: 215 25% 8%;
+    --primary-muted: 221 50% 15%;
+    --primary-hover: 221 100% 60%;
+    --accent: 168 94% 45%;
+    --accent-foreground: 215 25% 8%;
+    --accent-muted: 168 50% 15%;
+    --accent-hover: 168 94% 40%;
+    --card: 215 25% 10%;
+    --card-foreground: 0 0% 95%;
+    --card-border: 215 25% 18%;
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 13% 65%;
+    --border: 215 25% 18%;
+    --input: 215 25% 15%;
+    --success: 168 94% 45%;
+    --success-foreground: 215 25% 8%;
+    --warning: 35 100% 55%;
+    --warning-foreground: 215 25% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
   }
 }
 
@@ -100,6 +131,91 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+  
+  /* Medical typography hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight tracking-tight;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Medical button variants */
+  .btn-medical {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium transition-all duration-200;
+    @apply bg-gradient-to-r from-primary to-primary-hover text-primary-foreground;
+    @apply hover:shadow-medical hover:scale-[1.02] active:scale-[0.98];
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+  
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium transition-all duration-200;
+    @apply bg-gradient-to-r from-accent to-accent-hover text-accent-foreground;
+    @apply hover:shadow-lg hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3 font-medium transition-all duration-200;
+    @apply border-2 border-primary text-primary bg-transparent;
+    @apply hover:bg-primary hover:text-primary-foreground hover:shadow-md;
+  }
+  
+  /* Medical card components */
+  .card-medical {
+    @apply rounded-xl border border-card-border bg-card p-6 shadow-sm;
+    @apply hover:shadow-md transition-shadow duration-200;
+  }
+  
+  .card-product {
+    @apply rounded-xl border border-card-border bg-card overflow-hidden;
+    @apply hover:shadow-lg hover:scale-[1.02] transition-all duration-200;
+  }
+  
+  /* Trust badges */
+  .trust-badge {
+    @apply inline-flex items-center gap-2 rounded-full bg-success/10 px-4 py-2;
+    @apply text-sm font-medium text-success border border-success/20;
+  }
+  
+  /* Medical disclaimers */
+  .medical-disclaimer {
+    @apply rounded-lg bg-warning/10 border border-warning/20 p-4;
+    @apply text-sm text-warning-foreground;
+  }
+  
+  /* Container utilities */
+  .container-medical {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  /* Medical hero section */
+  .hero-medical {
+    @apply relative overflow-hidden;
+    background: var(--gradient-hero);
+  }
+  
+  /* Loading states */
+  .loading-skeleton {
+    @apply animate-pulse bg-muted rounded;
+  }
+  
+  /* Medical form elements */
+  .input-medical {
+    @apply w-full rounded-lg border border-input bg-background px-4 py-3;
+    @apply text-foreground placeholder:text-muted-foreground;
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/20;
+    @apply transition-colors duration-200;
   }
 }

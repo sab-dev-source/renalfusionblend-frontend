@@ -61,12 +61,12 @@ export const MedicalCarousel = () => {
   }, [medicalImages.length]);
 
   return (
-    <div className="relative p-4 md:p-8">
+    <div className="relative p-8 md:p-12">
       <Carousel className="w-full max-w-2xl mx-auto">
         <CarouselContent className="-ml-2 md:-ml-4">
           {medicalImages.map((image, index) => (
             <CarouselItem key={index} className="pl-2 md:pl-4">
-              <div className="relative group">
+              <div className="relative group p-4 md:p-6">
                 {/* Image Container - Increased size and better aspect ratio */}
                 <div className="aspect-[4/3] md:aspect-square w-full rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
                   <img

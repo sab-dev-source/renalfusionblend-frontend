@@ -1,6 +1,7 @@
 import { Layout } from "../components/Layout";
 import { GraduationCap, Clock, Users, Award, CheckCircle, Star, Download, Play } from "lucide-react";
 import { FlipText } from "../components/ui/flip-text";
+import { CertificateCarousel } from "../components/CertificateCarousel";
 import { Link } from "react-router-dom";
 
 const Courses = () => {
@@ -127,6 +128,9 @@ const Courses = () => {
           </div>
         </div>
       </section>
+
+      {/* Certificate Carousel */}
+      <CertificateCarousel />
 
       {/* Courses Catalog */}
       <section className="py-20">

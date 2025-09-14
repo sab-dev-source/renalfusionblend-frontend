@@ -45,16 +45,16 @@ export const CommunityCarousel = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
+        <div className="relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
           {/* Images */}
           {communityImages.map((image, index) => (
             <motion.div
               key={index}
-              className="absolute inset-0"
-              initial={{ opacity: 0, scale: 1.1 }}
+              className="absolute inset-0 flex items-center justify-center"
+              initial={{ opacity: 0, scale: 1.05 }}
               animate={{
                 opacity: currentIndex === index ? 1 : 0,
-                scale: currentIndex === index ? 1 : 1.1,
+                scale: currentIndex === index ? 1 : 1.05,
               }}
               transition={{
                 duration: 0.8,
@@ -64,11 +64,8 @@ export const CommunityCarousel = () => {
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover"
+                className="max-w-full max-h-full object-contain"
               />
-              
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </motion.div>
           ))}
 
@@ -80,17 +77,17 @@ export const CommunityCarousel = () => {
                 onClick={() => setCurrentIndex(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   currentIndex === index
-                    ? 'bg-white scale-110'
-                    : 'bg-white/50 hover:bg-white/70'
+                    ? 'bg-primary scale-110'
+                    : 'bg-primary/50 hover:bg-primary/70'
                 }`}
               />
             ))}
           </div>
 
           {/* Progress Bar */}
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-primary/20">
             <motion.div
-              className="h-full bg-white"
+              className="h-full bg-primary"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{ duration: 4, ease: "linear" }}
@@ -105,13 +102,13 @@ export const CommunityCarousel = () => {
             {communityImages.map((image, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-64 h-80 rounded-xl overflow-hidden"
+                className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center"
                 onClick={() => setCurrentIndex(index)}
               >
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover"
+                  className="max-w-full max-h-full object-contain"
                 />
               </div>
             ))}

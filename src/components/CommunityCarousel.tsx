@@ -45,7 +45,7 @@ export const CommunityCarousel = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-primary/20">
           {/* Images */}
           {communityImages.map((image, index) => (
             <motion.div

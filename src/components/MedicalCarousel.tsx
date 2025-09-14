@@ -61,34 +61,34 @@ export const MedicalCarousel = () => {
   }, [medicalImages.length]);
 
   return (
-    <div className="relative p-8">
-      <Carousel className="w-full max-w-lg mx-auto">
-        <CarouselContent>
+    <div className="relative p-4 md:p-8">
+      <Carousel className="w-full max-w-2xl mx-auto">
+        <CarouselContent className="-ml-2 md:-ml-4">
           {medicalImages.map((image, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem key={index} className="pl-2 md:pl-4">
               <div className="relative group">
-                {/* Image Container */}
-                <div className="aspect-square rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
+                {/* Image Container - Increased size and better aspect ratio */}
+                <div className="aspect-[4/3] md:aspect-square w-full rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-lg font-semibold mb-2">{image.title}</h3>
-                    <p className="text-sm text-white/90">{image.description}</p>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-base md:text-lg font-semibold mb-2">{image.title}</h3>
+                    <p className="text-xs md:text-sm text-white/90">{image.description}</p>
                   </div>
                 </div>
 
-                {/* Floating Medical Badges */}
-                <div className="absolute -top-3 -right-3 bg-accent text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg animate-pulse">
+                {/* Floating Medical Badges - Better positioning */}
+                <div className="absolute top-2 right-2 md:-top-3 md:-right-3 bg-accent text-white text-xs font-medium px-2 md:px-3 py-1 rounded-full shadow-lg animate-pulse z-10">
                   Medical Grade
                 </div>
-                <div className="absolute -bottom-3 -left-3 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg animate-pulse" style={{animationDelay: '1s'}}>
+                <div className="absolute bottom-2 left-2 md:-bottom-3 md:-left-3 bg-primary text-white text-xs font-medium px-2 md:px-3 py-1 rounded-full shadow-lg animate-pulse z-10" style={{animationDelay: '1s'}}>
                   FDA Registered
                 </div>
               </div>

@@ -1,13 +1,19 @@
 import { ArrowRight, Shield, Award, Users, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MedicalCarousel } from "./MedicalCarousel";
+import { useCountUp } from "@/hooks/useCountUp";
 
 export const Hero = () => {
   const trustStats = [
-    { icon: Users, label: "Healthcare Professionals", value: "10,000+" },
-    { icon: Shield, label: "FDA Registered Products", value: "500+" },
-    { icon: Award, label: "Medical Certifications", value: "50+" },
+    { icon: Users, label: "Healthcare Professionals", value: 10000, suffix: "+" },
+    { icon: Shield, label: "FDA Registered Products", value: 500, suffix: "+" },
+    { icon: Award, label: "Medical Certifications", value: 50, suffix: "+" },
   ];
+
+  const CountUpStat = ({ value, suffix }: { value: number; suffix: string }) => {
+    const ref = useCountUp(value, 2000);
+    return <span ref={ref}>0</span>;
+  };
 
   const trustFeatures = [
     "Evidence-based formulations",
@@ -60,12 +66,14 @@ export const Hero = () => {
 
             {/* Trust Stats */}
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
-              {trustStats.map((stat, index) => {
+            {trustStats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
                   <div key={index} className="text-center">
                     <Icon className="h-6 w-6 text-accent-muted mx-auto mb-2" />
-                    <div className="text-2xl font-bold text-white">{stat.value}</div>
+                    <div className="text-2xl font-bold text-white">
+                      <CountUpStat value={stat.value} suffix={stat.suffix} />{stat.suffix}
+                    </div>
                     <div className="text-sm text-white/80">{stat.label}</div>
                   </div>
                 );

@@ -1,6 +1,11 @@
 import { Shield, Award, Users, CheckCircle, Star, Lock } from "lucide-react";
+import { useCountUp } from "@/hooks/useCountUp";
 
 export const TrustSection = () => {
+  const CountUpStat = ({ value, suffix }: { value: number; suffix: string }) => {
+    const ref = useCountUp(value, 2500);
+    return <span ref={ref}>0</span>;
+  };
   const certifications = [
     {
       title: "FDA Registered",
@@ -75,19 +80,27 @@ export const TrustSection = () => {
         <div className="bg-gradient-medical rounded-2xl p-8 text-white mb-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold mb-2">10,000+</div>
+              <div className="text-3xl font-bold mb-2">
+                <CountUpStat value={10000} suffix="+" />+
+              </div>
               <div className="text-white/90">Healthcare Professionals</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">500+</div>
+              <div className="text-3xl font-bold mb-2">
+                <CountUpStat value={500} suffix="+" />+
+              </div>
               <div className="text-white/90">Products Available</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">50+</div>
+              <div className="text-3xl font-bold mb-2">
+                <CountUpStat value={50} suffix="+" />+
+              </div>
               <div className="text-white/90">Medical Certifications</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">99.9%</div>
+              <div className="text-3xl font-bold mb-2">
+                <CountUpStat value={99.9} suffix="%" />%
+              </div>
               <div className="text-white/90">Customer Satisfaction</div>
             </div>
           </div>

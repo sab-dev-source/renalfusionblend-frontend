@@ -1,8 +1,13 @@
 import { Layout } from "@/components/Layout";
 import { Book, Download, ShoppingCart, Star, Clock, FileText, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCountUp } from "@/hooks/useCountUp";
 
 const Books = () => {
+  const CountUpStat = ({ value, decimal = false }: { value: number; decimal?: boolean }) => {
+    const ref = useCountUp(value, 1500);
+    return <span ref={ref}>0</span>;
+  };
   const books = [
     {
       id: 1,
@@ -132,7 +137,7 @@ const Books = () => {
                       </div>
                       <div className="flex items-center gap-2">
                         <Star className="h-4 w-4 fill-warning text-warning" />
-                        <span>{book.rating} ({book.reviews} reviews)</span>
+                        <span><CountUpStat value={book.rating} decimal={true} /> (<CountUpStat value={book.reviews} /> reviews)</span>
                       </div>
                     </div>
                   </div>

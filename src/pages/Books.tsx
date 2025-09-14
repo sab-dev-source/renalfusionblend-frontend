@@ -296,38 +296,6 @@ const Books = () => {
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="py-20 bg-muted">
-        <div className="container-medical text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-12">Why Choose Our Medical Textbooks?</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto">
-                <Star className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground">Expert Authors</h3>
-              <p className="text-muted-foreground">Written by board-certified physicians and healthcare specialists</p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto">
-                <FileText className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground">Evidence-Based</h3>
-              <p className="text-muted-foreground">All content backed by latest research and clinical evidence</p>
-            </div>
-
-            <div className="space-y-4">
-              <div className="w-16 h-16 bg-success rounded-full flex items-center justify-center mx-auto">
-                <Download className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground">Flexible Formats</h3>
-              <p className="text-muted-foreground">Choose between physical books or instant digital downloads</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </Layout>
   );
 };

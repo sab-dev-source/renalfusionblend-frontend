@@ -16,6 +16,7 @@
     --primary-foreground: 0 0% 100%;
     --primary-muted: 221 100% 97%;
     --primary-hover: 221 100% 48%;
+    --primary-dark: 221 100% 35%;
     
     /* Medical Accent - Teal/Green */
     --accent: 168 94% 38%;    /* #06B48B */

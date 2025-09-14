@@ -1,5 +1,6 @@
-import { Layout } from "@/components/Layout";
+import { Layout } from "../components/Layout";
 import { GraduationCap, Clock, Users, Award, CheckCircle, Star, Download, Play } from "lucide-react";
+import { FlipText } from "../components/ui/flip-text";
 import { Link } from "react-router-dom";
 
 const Courses = () => {
@@ -100,9 +101,11 @@ const Courses = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="container-medical text-center">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-5xl font-bold text-white mb-6">
-              Professional Medical Education
-            </h1>
+            <FlipText
+              word="Professional Medical Education"
+              className="text-5xl font-bold text-white mb-6"
+              delayMultiple={0.05}
+            />
             <p className="text-xl text-white/90 mb-8">
               Advance your career with accredited medical courses designed by leading healthcare experts. 
               Earn certificates and continuing education credits recognized by major medical organizations.

@@ -5,6 +5,7 @@ import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { ProductCard } from "../components/ProductCard";
 import { CommunityCarousel } from "../components/CommunityCarousel";
+import { FlipText } from "../components/ui/flip-text";
 import { wheyProteinProducts } from "../data/products";
 
 export default function Products() {
@@ -17,14 +18,22 @@ export default function Products() {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">Whey Proteins</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Premium quality whey protein supplements designed to support your fitness goals and kidney health with carefully selected ingredients.
-          </p>
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-hero">
+        <div className="container-medical text-center">
+          <div className="max-w-3xl mx-auto">
+            <FlipText
+              word="Whey Proteins"
+              className="text-5xl font-bold text-white mb-6"
+            />
+            <p className="text-xl text-white/90 mb-8">
+              Premium quality whey protein supplements designed to support your fitness goals and kidney health with carefully selected ingredients.
+            </p>
+          </div>
         </div>
+      </section>
 
+      <div className="container mx-auto px-4 py-8">
         {/* Search and Filters */}
         <div className="mb-8 flex flex-col sm:flex-row gap-4">
           <div className="relative flex-1">

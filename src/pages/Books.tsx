@@ -1,7 +1,8 @@
-import { Layout } from "@/components/Layout";
+import { Layout } from "../components/Layout";
 import { Book, Download, ShoppingCart, Star, Clock, FileText, CheckCircle } from "lucide-react";
+import { FlipText } from "../components/ui/flip-text";
 import { Link } from "react-router-dom";
-import { useCountUp } from "@/hooks/useCountUp";
+import { useCountUp } from "../hooks/useCountUp";
 
 const Books = () => {
   const CountUpStat = ({ value, decimal = false }: { value: number; decimal?: boolean }) => {
@@ -80,9 +81,11 @@ const Books = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="container-medical text-center">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-5xl font-bold text-white mb-6">
-              Medical Education Library
-            </h1>
+            <FlipText
+              word="Medical Education Library"
+              className="text-5xl font-bold text-white mb-6"
+              delayMultiple={0.06}
+            />
             <p className="text-xl text-white/90 mb-8">
               Comprehensive medical textbooks and resources written by leading healthcare professionals. 
               Available in both physical and digital formats for immediate access.

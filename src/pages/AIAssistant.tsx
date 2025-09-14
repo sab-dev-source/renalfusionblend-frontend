@@ -1,5 +1,6 @@
-import { Layout } from "@/components/Layout";
+import { Layout } from "../components/Layout";
 import { Send, Bot, User, AlertTriangle, Shield, Clock } from "lucide-react";
+import { FlipText } from "../components/ui/flip-text";
 import { useState } from "react";
 
 const AIAssistant = () => {
@@ -35,17 +36,27 @@ const AIAssistant = () => {
 
   return (
     <Layout>
-      <div className="py-8 min-h-screen bg-gradient-subtle">
-        <div className="container-medical max-w-4xl">
-          {/* Header */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-2xl mb-4">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-hero">
+        <div className="container-medical text-center">
+          <div className="max-w-3xl mx-auto">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-6">
               <Bot className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-foreground mb-2">AI Health Assistant</h1>
-            <p className="text-muted-foreground">Get personalized health guidance and product recommendations</p>
+            <FlipText
+              word="AI Health Assistant"
+              className="text-5xl font-bold text-white mb-6"
+              delayMultiple={0.08}
+            />
+            <p className="text-xl text-white/90 mb-8">
+              Get personalized health guidance and product recommendations from our advanced AI assistant.
+            </p>
           </div>
+        </div>
+      </section>
 
+      <div className="py-8 bg-gradient-subtle">
+        <div className="container-medical max-w-4xl">
           {/* Medical Disclaimer */}
           <div className="medical-disclaimer mb-8">
             <div className="flex items-start gap-3">

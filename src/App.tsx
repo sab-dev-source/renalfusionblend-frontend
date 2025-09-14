@@ -26,14 +26,8 @@ const queryClient = new QueryClient();
 const App = () => {
   const [isInitialLoading, setIsInitialLoading] = useState(true);
 
-  useEffect(() => {
-    // Simulate initial app loading
-    const timer = setTimeout(() => {
-      setIsInitialLoading(false);
-    }, 100); // Small delay to ensure proper mounting
-
-    return () => clearTimeout(timer);
-  }, []);
+  // Let LoadingScreen control when it completes via onComplete
+  // No auto-dismiss timer here to ensure the shutter is visible
 
   return (
     <QueryClientProvider client={queryClient}>

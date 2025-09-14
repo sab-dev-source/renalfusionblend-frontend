@@ -61,14 +61,14 @@ export const MedicalCarousel = () => {
   }, [medicalImages.length]);
 
   return (
-    <div className="relative p-8 md:p-12">
-      <Carousel className="w-full max-w-2xl mx-auto">
+    <div className="relative px-0 py-10 md:py-14">
+      <Carousel className="w-full max-w-4xl lg:max-w-5xl mx-auto">
         <CarouselContent className="-ml-2 md:-ml-4">
           {medicalImages.map((image, index) => (
             <CarouselItem key={index} className="pl-2 md:pl-4">
-              <div className="relative group p-4 md:p-6">
+              <div className="relative group">
                 {/* Image Container - Increased size and better aspect ratio */}
-                <div className="aspect-[4/3] md:aspect-square w-full rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
+                <div className="aspect-[16/9] sm:aspect-[4/3] lg:aspect-[16/9] w-full rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
                   <img
                     src={image.src}
                     alt={image.alt}
@@ -85,10 +85,10 @@ export const MedicalCarousel = () => {
                 </div>
 
                 {/* Floating Medical Badges - Better positioning */}
-                <div className="absolute top-2 right-2 md:-top-3 md:-right-3 bg-accent text-white text-xs font-medium px-2 md:px-3 py-1 rounded-full shadow-lg animate-pulse z-10">
+                <div className="absolute top-3 right-3 bg-accent text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg animate-pulse z-20">
                   Medical Grade
                 </div>
-                <div className="absolute bottom-2 left-2 md:-bottom-3 md:-left-3 bg-primary text-white text-xs font-medium px-2 md:px-3 py-1 rounded-full shadow-lg animate-pulse z-10" style={{animationDelay: '1s'}}>
+                <div className="absolute bottom-3 left-3 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg animate-pulse z-20" style={{animationDelay: '1s'}}>
                   FDA Registered
                 </div>
               </div>

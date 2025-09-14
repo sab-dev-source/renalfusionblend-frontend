@@ -4,7 +4,7 @@ import { Book, Download, ShoppingCart, Star, Clock, FileText, CheckCircle, Headp
 import { FlipText } from "../components/ui/flip-text";
 import { Link } from "react-router-dom";
 import { useCountUp } from "../hooks/useCountUp";
-import { ConversionPopups } from "../components/ConversionPopups";
+import { ConversionBanner } from "../components/ConversionPopups";
 import dialysisFirstFront from "../assets/books/dialysis-champions-first-edition-front.jpg";
 import dialysisFirstBack from "../assets/books/dialysis-champions-first-edition-back.jpg";
 import dialysisSecondFront from "../assets/books/dialysis-champions-second-edition-front.jpg";
@@ -84,7 +84,6 @@ const Books = () => {
 
   return (
     <Layout>
-      <ConversionPopups />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container-medical text-center">
@@ -119,7 +118,7 @@ const Books = () => {
       {/* Books Catalog */}
       <section className="py-20">
         <div className="container-medical">
-            <div className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Dialysis Champions Book Series</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Evidence-based nephrology education by Rosemarie Zuleta MSN, BSN, CNN - 
@@ -127,59 +126,74 @@ const Books = () => {
             </p>
           </div>
 
-          <div className="space-y-12">
+          {/* Conversion Banner */}
+          <ConversionBanner />
+
+          <div className="space-y-16">
             {books.map((book, index) => (
               <div key={book.id} className="card-medical">
-                <div className="grid lg:grid-cols-3 gap-8">
-                  {/* Book Cover */}
-                  <div className="space-y-4">
-                    <div className="relative group">
-                      <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg">
-                        <img 
-                          src={showBackCover[book.id] ? book.backCover : book.frontCover} 
-                          alt={`${book.title} ${showBackCover[book.id] ? 'back' : 'front'} cover`}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
+                <div className="grid lg:grid-cols-5 gap-8">
+                  {/* Book Covers - Show both front and back */}
+                  <div className="lg:col-span-2 space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      {/* Front Cover */}
+                      <div className="space-y-2">
+                        <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg group">
+                          <img 
+                            src={book.frontCover} 
+                            alt={`${book.title} front cover`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                        <p className="text-xs text-center text-muted-foreground font-medium">Front Cover</p>
                       </div>
-                      <button
-                        onClick={() => toggleCover(book.id)}
-                        className="absolute top-2 right-2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
-                        title="Flip cover"
-                      >
-                        <RotateCcw className="h-4 w-4" />
-                      </button>
                       
-                      {/* Edition Badge */}
+                      {/* Back Cover */}
+                      <div className="space-y-2">
+                        <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-lg group">
+                          <img 
+                            src={book.backCover} 
+                            alt={`${book.title} back cover`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                        <p className="text-xs text-center text-muted-foreground font-medium">Back Cover</p>
+                      </div>
+                    </div>
+                    
+                    {/* Edition Badges */}
+                    <div className="flex gap-2 justify-center">
                       {book.newEdition && (
-                        <div className="absolute top-2 left-2 bg-accent text-white px-2 py-1 rounded-full text-xs font-semibold">
+                        <div className="bg-accent text-white px-3 py-1 rounded-full text-xs font-semibold">
                           NEW EDITION
                         </div>
                       )}
-                      
-                      {/* Bestseller Badge */}
                       {book.bestseller && (
-                        <div className="absolute -top-2 -left-2 bg-warning text-white px-3 py-1 rounded-full text-xs font-bold transform -rotate-12">
+                        <div className="bg-warning text-white px-3 py-1 rounded-full text-xs font-bold">
                           ⭐ BESTSELLER
                         </div>
                       )}
                     </div>
                     
                     {/* Book Stats */}
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <FileText className="h-4 w-4" />
-                        <span>{book.pages} pages</span>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex items-center gap-2 justify-center">
+                        <FileText className="h-4 w-4 text-primary" />
+                        <span className="font-medium">{book.pages} pages</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Clock className="h-4 w-4" />
+                      <div className="flex items-center gap-2 justify-center">
+                        <Clock className="h-4 w-4 text-accent" />
                         <span>Ships in {book.shipping}</span>
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 justify-center">
                         <Star className="h-4 w-4 fill-warning text-warning" />
-                        <span><CountUpStat value={book.rating} decimal={true} /> (<CountUpStat value={book.reviews} /> reviews)</span>
+                        <span className="font-medium">
+                          <CountUpStat value={book.rating} decimal={true} /> 
+                          (<CountUpStat value={book.reviews} /> reviews)
+                        </span>
                       </div>
                       {book.hasAudio && (
-                        <div className="flex items-center gap-2 text-accent font-medium">
+                        <div className="flex items-center gap-2 justify-center text-accent font-medium">
                           <Headphones className="h-4 w-4" />
                           <span>Audio Edition Available</span>
                         </div>
@@ -188,7 +202,7 @@ const Books = () => {
                   </div>
 
                   {/* Book Details */}
-                  <div className="lg:col-span-2 space-y-6">
+                  <div className="lg:col-span-3 space-y-6">
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-2">{book.title}</h3>
                       <h4 className="text-lg font-semibold text-accent mb-2">{book.subtitle}</h4>

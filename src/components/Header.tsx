@@ -57,7 +57,7 @@ export const Header = () => {
             {/* Wishlist */}
             <Link
               to="/wishlist"
-              className="relative p-2 text-muted-foreground hover:text-primary transition-colors"
+              className="relative p-2 text-foreground hover:text-primary transition-colors"
             >
               <Heart className="h-5 w-5" />
               {wishlist.length > 0 && (
@@ -70,7 +70,7 @@ export const Header = () => {
             {/* Cart */}
             <Link
               to="/cart"
-              className="relative p-2 text-muted-foreground hover:text-primary transition-colors"
+              className="relative p-2 text-foreground hover:text-primary transition-colors"
             >
               <ShoppingCart className="h-5 w-5" />
               {getTotalItems() > 0 && (
@@ -83,7 +83,7 @@ export const Header = () => {
             {/* Mobile Menu Toggle */}
             <div className="md:hidden">
               <button
-                className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                className="p-2 text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -102,7 +102,7 @@ export const Header = () => {
                 <span className="text-sm font-medium text-foreground">Products</span>
                 <Link
                   to="/products"
-                  className="flex items-center space-x-2 pl-4 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center space-x-2 pl-4 text-foreground hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Dumbbell className="h-4 w-4" />
@@ -110,7 +110,7 @@ export const Header = () => {
                 </Link>
                 <Link
                   to="/medical"
-                  className="flex items-center space-x-2 pl-4 text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center space-x-2 pl-4 text-foreground hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Shield className="h-4 w-4" />
@@ -121,7 +121,7 @@ export const Header = () => {
               {/* Other Navigation */}
               <Link
                 to="/courses"
-                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Award className="h-4 w-4" />
@@ -129,7 +129,7 @@ export const Header = () => {
               </Link>
               <Link
                 to="/books"
-                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <BookOpen className="h-4 w-4" />
@@ -137,7 +137,7 @@ export const Header = () => {
               </Link>
               <Link
                 to="/ai-assistant"
-                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Bot className="h-4 w-4" />

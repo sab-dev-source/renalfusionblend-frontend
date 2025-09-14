@@ -113,7 +113,7 @@ export function HoverExpandableTabs({
               className={cn(
                 "relative flex items-center rounded-xl py-2.5 text-sm font-medium transition-all duration-300",
                 "hover:bg-muted/60 hover:text-primary",
-                "text-muted-foreground",
+                "text-foreground",
                 isDropdownOpen && "bg-muted/60 text-primary"
               )}
             >
@@ -167,7 +167,7 @@ export function HoverExpandableTabs({
                             onNavigate?.(item.href);
                             setDropdownOpen(null);
                           }}
-                          className="flex w-full items-center space-x-2 rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                          className="flex w-full items-center space-x-2 rounded-md px-3 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
                         >
                           <ItemIcon size={16} />
                           <span>{item.title}</span>

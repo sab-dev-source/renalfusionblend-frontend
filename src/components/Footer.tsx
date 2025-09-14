@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Heart, Shield, Mail, Phone, MapPin } from "lucide-react";
+import renalFusionLogo from "../assets/renal-fusion-logo.png";
 
 export const Footer = () => {
   const footerLinks = {
@@ -33,10 +34,8 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="h-8 w-8 rounded-lg bg-gradient-medical flex items-center justify-center">
-                <Heart className="h-5 w-5 text-white" />
-              </div>
+            <Link to="/" className="flex items-center space-x-3 mb-4">
+              <img src={renalFusionLogo} alt="Renal Fusion Blend" className="h-10 w-10" />
               <span className="text-xl font-bold text-gradient">Renal Fusion Blend</span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-md">

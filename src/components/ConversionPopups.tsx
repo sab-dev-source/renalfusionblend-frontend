@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Clock, Headphones, TrendingUp, Users } from 'lucide-react';
-import { Dialog, DialogContent } from './ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from './ui/dialog';
 
 interface ConversionPopupsProps {
   onClose?: () => void;
@@ -81,6 +81,8 @@ export const ConversionPopups: React.FC<ConversionPopupsProps> = ({ onClose }) =
   const AudioDealPopup = () => (
     <Dialog open={showAudioDeal} onOpenChange={setShowAudioDeal}>
       <DialogContent className="max-w-md">
+        <DialogTitle className="sr-only">Exclusive Audio Edition Deal</DialogTitle>
+        <DialogDescription className="sr-only">Limited time offer for audiobook version</DialogDescription>
         <div className="text-center space-y-4">
           <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto">
             <Headphones className="h-8 w-8 text-white" />

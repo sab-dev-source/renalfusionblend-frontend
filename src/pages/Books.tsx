@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout } from "../components/Layout";
 import { Book, Download, ShoppingCart, Star, Clock, FileText, CheckCircle, Headphones, RotateCcw } from "lucide-react";
 import { FlipText } from "../components/ui/flip-text";
@@ -15,7 +15,7 @@ const Books = () => {
     const ref = useCountUp(value, 1500);
     return <span ref={ref}>0</span>;
   };
-  const [showBackCover, setShowBackCover] = React.useState<{[key: number]: boolean}>({});
+  const [showBackCover, setShowBackCover] = useState<{[key: number]: boolean}>({});
 
   const toggleCover = (bookId: number) => {
     setShowBackCover(prev => ({

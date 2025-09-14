@@ -1,39 +1,10 @@
 import { Layout } from "../components/Layout";
 import { Send, Bot, User, AlertTriangle, Shield, Clock } from "lucide-react";
 import { FlipText } from "../components/ui/flip-text";
+import FileUploadChat from "../components/ui/file-upload-and-chat";
 import { useState } from "react";
 
 const AIAssistant = () => {
-  const [messages, setMessages] = useState([
-    {
-      type: 'bot',
-      content: 'Hello! I\'m your AI Health Assistant. I can help guide you with symptoms, product recommendations, and general health questions. Please remember that I\'m not a substitute for professional medical advice.',
-      timestamp: new Date()
-    }
-  ]);
-  const [inputMessage, setInputMessage] = useState('');
-
-  const handleSendMessage = () => {
-    if (!inputMessage.trim()) return;
-
-    // Add user message
-    const userMessage = {
-      type: 'user',
-      content: inputMessage,
-      timestamp: new Date()
-    };
-
-    // Simulate AI response
-    const botResponse = {
-      type: 'bot',
-      content: 'Thank you for your question. Based on what you\'ve described, I recommend consulting with a healthcare professional for personalized advice. In the meantime, here are some general suggestions...',
-      timestamp: new Date()
-    };
-
-    setMessages(prev => [...prev, userMessage, botResponse]);
-    setInputMessage('');
-  };
-
   return (
     <Layout>
       {/* Hero Section */}
@@ -74,77 +45,9 @@ const AIAssistant = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Chat Interface */}
+            {/* Enhanced Chat Interface */}
             <div className="lg:col-span-2">
-              <div className="card-medical h-[600px] flex flex-col">
-                {/* Chat Header */}
-                <div className="flex items-center justify-between p-4 border-b border-card-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center">
-                      <Bot className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-foreground">Health Assistant</h3>
-                      <div className="flex items-center gap-1 text-sm text-success">
-                        <div className="w-2 h-2 bg-success rounded-full"></div>
-                        <span>Online</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4" />
-                    <span>Available 24/7</span>
-                  </div>
-                </div>
-
-                {/* Messages */}
-                <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                  {messages.map((message, index) => (
-                    <div key={index} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-                      <div className={`max-w-[80%] flex gap-3 ${message.type === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          message.type === 'user' 
-                            ? 'bg-primary text-primary-foreground' 
-                            : 'bg-accent text-accent-foreground'
-                        }`}>
-                          {message.type === 'user' ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
-                        </div>
-                        <div className={`rounded-2xl px-4 py-3 ${
-                          message.type === 'user'
-                            ? 'bg-primary text-primary-foreground'
-                            : 'bg-muted text-foreground'
-                        }`}>
-                          <p className="text-sm">{message.content}</p>
-                          <p className="text-xs opacity-70 mt-2">
-                            {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Input */}
-                <div className="p-4 border-t border-card-border">
-                  <div className="flex gap-2">
-                    <input
-                      type="text"
-                      placeholder="Describe your symptoms or ask a health question..."
-                      value={inputMessage}
-                      onChange={(e) => setInputMessage(e.target.value)}
-                      onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                      className="flex-1 input-medical"
-                    />
-                    <button 
-                      onClick={handleSendMessage}
-                      className="btn-medical px-4"
-                      disabled={!inputMessage.trim()}
-                    >
-                      <Send className="h-4 w-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <FileUploadChat />
             </div>
 
             {/* Sidebar Resources */}

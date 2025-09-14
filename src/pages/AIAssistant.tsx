@@ -3,6 +3,7 @@ import { Send, Bot, User, AlertTriangle, Shield, Clock } from "lucide-react";
 import { FlipText } from "../components/ui/flip-text";
 import FileUploadChat from "../components/ui/file-upload-and-chat";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const AIAssistant = () => {
   return (
@@ -60,14 +61,10 @@ const AIAssistant = () => {
                     <div className="font-medium text-sm">Symptom Checker</div>
                     <div className="text-xs text-muted-foreground">Get guidance on symptoms</div>
                   </button>
-                  <button className="w-full text-left p-3 rounded-lg border border-card-border hover:bg-muted transition-colors">
+                  <Link to="/products" className="w-full text-left p-3 rounded-lg border border-card-border hover:bg-muted transition-colors block">
                     <div className="font-medium text-sm">Product Recommendations</div>
                     <div className="text-xs text-muted-foreground">Find suitable products</div>
-                  </button>
-                  <button className="w-full text-left p-3 rounded-lg border border-card-border hover:bg-muted transition-colors">
-                    <div className="font-medium text-sm">Book Consultation</div>
-                    <div className="text-xs text-muted-foreground">Connect with professionals</div>
-                  </button>
+                  </Link>
                 </div>
               </div>
 

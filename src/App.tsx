@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./contexts/CartContext";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { PageTransition } from "./components/PageTransition";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { ScrollToTopOnMount } from "./components/ScrollToTopOnMount";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import MedicalEquipment from "./pages/MedicalEquipment";
@@ -40,6 +42,7 @@ const App = () => {
             onComplete={() => setIsInitialLoading(false)} 
           />
           <BrowserRouter>
+            <ScrollToTopOnMount />
             <PageTransition>
               <Routes>
                 <Route path="/" element={<Index />} />
@@ -59,6 +62,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </PageTransition>
+            <ScrollToTop />
           </BrowserRouter>
         </TooltipProvider>
       </CartProvider>

@@ -111,12 +111,12 @@ export const Footer = () => {
         </div>
 
         {/* Medical Disclaimer */}
-        <div className="medical-disclaimer mt-8">
+        <div className="bg-orange-50 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-800 rounded-lg p-4 mt-8">
           <div className="flex items-start space-x-2">
-            <Shield className="h-5 w-5 text-warning mt-0.5 flex-shrink-0" />
+            <Shield className="h-5 w-5 text-orange-600 mt-0.5 flex-shrink-0" />
             <div>
-              <p className="font-medium text-warning-foreground mb-1">Medical Disclaimer</p>
-              <p className="text-sm text-warning-foreground/90">
+              <p className="font-medium text-orange-800 dark:text-orange-200 mb-1">Medical Disclaimer</p>
+              <p className="text-sm text-orange-700 dark:text-orange-300">
                 The information provided on this website is for educational purposes only and is not intended 
                 to diagnose, treat, cure, or prevent any disease. Always consult with a qualified healthcare 
                 professional before making any changes to your treatment regimen.
@@ -143,7 +143,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-card-border">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground font-medium">
             © 2024 Renal Fusion Blend. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
@@ -151,7 +151,7 @@ export const Footer = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm text-foreground hover:text-primary transition-colors font-medium"
               >
                 {link.name}
               </Link>

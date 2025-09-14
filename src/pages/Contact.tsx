@@ -200,12 +200,12 @@ const Contact = () => {
                   </div>
 
                   {/* Medical Disclaimer */}
-                  <div className="medical-disclaimer">
+                  <div className="bg-orange-50 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-800 rounded-lg p-4">
                     <div className="flex items-start gap-3">
-                      <Shield className="h-5 w-5 text-warning flex-shrink-0 mt-0.5" />
+                      <Shield className="h-5 w-5 text-orange-600 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-medium text-warning mb-1">Medical Disclaimer</p>
-                        <p className="text-sm text-warning/90">
+                        <p className="font-medium text-orange-800 dark:text-orange-200 mb-1">Medical Disclaimer</p>
+                        <p className="text-sm text-orange-700 dark:text-orange-300">
                           This consultation is for educational purposes and general guidance only. 
                           It does not constitute medical advice, diagnosis, or treatment. 
                           Please consult your physician for specific medical concerns.

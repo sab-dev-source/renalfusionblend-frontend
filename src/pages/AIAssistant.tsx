@@ -58,12 +58,12 @@ const AIAssistant = () => {
       <div className="py-8 bg-gradient-subtle">
         <div className="container-medical max-w-4xl">
           {/* Medical Disclaimer */}
-          <div className="medical-disclaimer mb-8">
+          <div className="bg-orange-50 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-800 rounded-lg p-4 mb-8">
             <div className="flex items-start gap-3">
-              <AlertTriangle className="h-5 w-5 text-warning mt-0.5 flex-shrink-0" />
+              <AlertTriangle className="h-5 w-5 text-orange-600 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="font-medium text-warning-foreground mb-2">Important Medical Disclaimer</p>
-                <ul className="text-sm text-warning-foreground/90 space-y-1">
+                <p className="font-medium text-orange-800 dark:text-orange-200 mb-2">Important Medical Disclaimer</p>
+                <ul className="text-sm text-orange-700 dark:text-orange-300 space-y-1">
                   <li>• This AI assistant provides general health information only</li>
                   <li>• Not a substitute for professional medical advice, diagnosis, or treatment</li>
                   <li>• For emergencies, call 911 immediately</li>

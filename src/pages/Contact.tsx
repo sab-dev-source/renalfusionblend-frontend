@@ -8,10 +8,10 @@ const Contact = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="container-medical text-center">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-4">
+            <h1 className="fluid-h1 font-bold text-white mb-6 px-4">
               Expert Medical Consultation
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 px-4">
+            <p className="fluid-subtitle text-white/90 mb-8 px-4">
               Connect with our board-certified medical professionals for personalized guidance, 
               product recommendations, and healthcare education support.
             </p>

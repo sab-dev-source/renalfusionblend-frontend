@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, Variants } from "framer-motion";
+import { Fragment } from "react";
 
 import { cn } from "../../lib/utils";
 
@@ -22,24 +23,39 @@ function FlipText({
   },
   className,
 }: FlipTextProps) {
+  const words = word.split(" ");
+
   return (
-    <div className="flex justify-center space-x-2">
+    <span
+      className={cn(
+        "inline-flex flex-wrap items-baseline whitespace-normal break-words leading-tight",
+        className
+      )}
+      aria-label={word}
+    >
       <AnimatePresence mode="wait">
-        {word.split("").map((char, i) => (
-          <motion.span
-            key={i}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={framerProps}
-            transition={{ duration, delay: i * delayMultiple }}
-            className={cn("origin-center drop-shadow-sm", className)}
-          >
-            {char}
-          </motion.span>
+        {words.map((w, wi) => (
+          <>
+            <span key={`w-${wi}`} className="inline-flex">
+              {w.split("").map((char, ci) => (
+                <motion.span
+                  key={`${wi}-${ci}`}
+                  initial="hidden"
+                  animate="visible"
+                  exit="hidden"
+                  variants={framerProps}
+                  transition={{ duration, delay: (wi + ci) * delayMultiple }}
+                  className={cn("origin-center will-change-transform")}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
+            {wi < words.length - 1 ? " " : null}
+          </>
         ))}
       </AnimatePresence>
-    </div>
+    </span>
   );
 }
 

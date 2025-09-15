@@ -17,10 +17,10 @@ const AIAssistant = () => {
             </div>
             <FlipText
               word="AI Health Assistant"
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-4"
+              className="fluid-h1 font-bold text-white mb-6"
               delayMultiple={0.08}
             />
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 px-4">
+            <p className="fluid-subtitle text-white/90 mb-8 px-4">
               Get personalized health guidance and product recommendations from our advanced AI assistant.
             </p>
           </div>

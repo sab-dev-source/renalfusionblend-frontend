@@ -18,15 +18,15 @@ export default function MedicalEquipment() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-hero">
+      <section className="hero-medical py-20">
         <div className="container-medical text-center">
           <div className="max-w-3xl mx-auto">
             <FlipText
               word="Professional Medical Equipment"
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-4"
+              className="fluid-h1 font-bold text-white mb-6"
               delayMultiple={0.05}
             />
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 px-4">
+            <p className="fluid-subtitle text-white/90 mb-8 px-4">
               Professional-grade medical equipment for accurate health monitoring and diagnostics. 
               Trusted by healthcare providers worldwide for reliable results and superior quality.
             </p>

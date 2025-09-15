@@ -17,14 +17,13 @@ const Login = () => {
           <div className="max-w-2xl mx-auto">
             <FlipText
               word={isLogin ? "Welcome Back" : "Create Account"}
-              className="text-5xl font-bold text-white mb-6"
+              className="fluid-h1 font-bold text-white mb-6"
               delayMultiple={0.06}
             />
-            <p className="text-xl text-white/90 mb-8">
+            <p className="fluid-subtitle text-white/90 mb-8">
               {isLogin 
                 ? "Access your account to continue your health journey with personalized recommendations and order history."
-                : "Join thousands of healthcare professionals and patients who trust Renal Fusion Blend for their medical needs."
-              }
+                : "Join thousands of healthcare professionals and patients who trust Renal Fusion Blend for their medical needs."}
             </p>
           </div>
         </div>

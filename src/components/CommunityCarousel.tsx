@@ -36,16 +36,16 @@ export const CommunityCarousel = () => {
           <Badge variant="secondary" className="mb-4 px-4 py-2 text-sm font-medium">
             Join the Community
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 px-4">
             Trusted by Healthcare Professionals & Athletes
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Join thousands of satisfied customers who trust Renal Fusion Blend for their health and fitness journey.
           </p>
         </div>
 
         {/* Carousel */}
-        <div className="relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-primary/20">
+        <div className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-primary/20">
           {/* Images */}
           {communityImages.map((image, index) => (
             <motion.div
@@ -96,24 +96,6 @@ export const CommunityCarousel = () => {
           </div>
         </div>
 
-        {/* Mobile Carousel for smaller screens */}
-        <div className="block md:hidden mt-8">
-          <div className="flex space-x-4 overflow-x-auto pb-4 [-webkit-scrollbar]:hidden [scrollbar-width:none]">
-            {communityImages.map((image, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 w-80 h-64 rounded-xl overflow-hidden bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center"
-                onClick={() => setCurrentIndex(index)}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="max-w-full max-h-full object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Call to Action */}
         <div className="text-center mt-12">

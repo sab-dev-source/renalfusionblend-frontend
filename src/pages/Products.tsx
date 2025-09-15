@@ -24,9 +24,9 @@ export default function Products() {
           <div className="max-w-3xl mx-auto">
             <FlipText
               word="Whey Proteins"
-              className="text-5xl font-bold text-white mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6"
             />
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 px-4">
               Premium quality whey protein supplements designed to support your fitness goals and kidney health with carefully selected ingredients.
             </p>
           </div>

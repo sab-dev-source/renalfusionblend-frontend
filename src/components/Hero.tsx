@@ -33,11 +33,11 @@ export const Hero = () => {
                 <Shield className="h-4 w-4" />
                 <span>Trusted by Healthcare Professionals</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
                 Premium Medical Solutions for 
                 <span className="block text-accent-muted">Optimal Health</span>
               </h1>
-              <p className="text-xl text-white/90 max-w-lg">
+              <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-lg">
                 Evidence-based supplements, medical products, and professional education 
                 trusted by healthcare providers worldwide.
               </p>

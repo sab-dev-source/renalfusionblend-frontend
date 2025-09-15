@@ -15,7 +15,7 @@ export const Footer = () => {
       { name: "Resource Library", href: "/books" },
     ],
     support: [
-      { name: "AI Health Assistant", href: "/ai-assistant" },
+      { name: "AI Health Consultant", href: "/ai-consultant" },
       { name: "Contact Support", href: "/contact" },
     ],
     legal: [

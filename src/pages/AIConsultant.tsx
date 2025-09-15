@@ -2,10 +2,13 @@ import { Layout } from "../components/Layout";
 import { Send, Bot, User, AlertTriangle, Shield, Clock } from "lucide-react";
 import { FlipText } from "../components/ui/flip-text";
 import FileUploadChat from "../components/ui/file-upload-and-chat";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const AIConsultant = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   return (
     <Layout>
       {/* Hero Section */}

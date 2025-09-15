@@ -158,7 +158,7 @@ const Courses = () => {
                       </div>
                     </div>
                     
-                    <Link to="/ai-assistant" className="w-full btn-outline text-sm inline-flex items-center justify-center">
+                    <Link to="/ai-consultant" className="w-full btn-outline text-sm inline-flex items-center justify-center">
                       <Play className="h-4 w-4 mr-2" />
                       Preview Course
                     </Link>

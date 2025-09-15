@@ -24,7 +24,7 @@ export const Header = () => {
     { type: "separator" },
     { title: "Courses", icon: Award, href: "/courses" },
     { title: "Books", icon: BookOpen, href: "/books" },
-    { title: "AI Assistant", icon: Bot, href: "/ai-assistant" },
+    { title: "AI Consultant", icon: Bot, href: "/ai-consultant" },
     { type: "separator" },
     { title: "Login", icon: User, href: "/login" },
   ] as any;
@@ -136,12 +136,12 @@ export const Header = () => {
                 <span>Books</span>
               </Link>
               <Link
-                to="/ai-assistant"
+                to="/ai-consultant"
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Bot className="h-4 w-4" />
-                <span>AI Assistant</span>
+                <span>AI Consultant</span>
               </Link>
               
               <div className="flex flex-col space-y-2 pt-4 border-t border-card-border">

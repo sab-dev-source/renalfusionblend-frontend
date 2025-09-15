@@ -22,7 +22,7 @@ const FileUploadChat = () => {
     {
       id: 1,
       type: 'ai',
-      content: 'Hello! I\'m your AI Health Assistant. I can help guide you with symptoms, product recommendations, and general health questions. Feel free to upload files and start chatting!',
+      content: 'Hello! I\'m your AI Health Consultant. I can help guide you with symptoms, product recommendations, and general health questions. Feel free to upload files and start chatting!',
       timestamp: new Date()
     }
   ]);
@@ -250,7 +250,7 @@ const FileUploadChat = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-medium text-foreground">AI Health Assistant</h3>
+              <h3 className="font-medium text-foreground">AI Health Consultant</h3>
               <div className="flex items-center gap-1 text-sm text-success">
                 <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
                 <span>Online</span>

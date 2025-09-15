@@ -14,31 +14,31 @@ export const TrustSection = () => {
   const testimonials = [
     {
       img: drSarahMitchell,
-      quote: "As a nephrologist with 15 years of experience, I've seen firsthand how proper protein intake affects kidney function. Renal Fusion's phosphorus-controlled formulas allow my CKD patients to maintain muscle mass safely. The clinical research behind their products is impressive.",
+      quote: "I recommend Renal Fusion to my CKD patients. Their phosphorus-controlled formulas are clinically sound and help maintain muscle mass safely.",
       name: "Dr. Sarah Mitchell",
       role: "Nephrologist"
     },
     {
       img: michaelRodriguez,
-      quote: "Being diagnosed with Stage 3 CKD changed everything about my training. Renal Fusion's ISOLATE helped me stay competitive while managing my condition. My labs improved, and I can still push my limits in the gym. Game-changer for athlete-patients like me.",
+      quote: "As a trainer with kidney issues, Renal Fusion changed everything. I can stay competitive while managing my condition. My labs improved dramatically.",
       name: "Michael Rodriguez",
       role: "Personal Trainer & Patient"
     },
     {
       img: jennyferChen,
-      quote: "I recommend Renal Fusion to clients with kidney concerns because their nutritional transparency is unmatched. The detailed phosphorus, potassium, and sodium breakdowns make meal planning so much easier. Finally, supplements that work with renal diets, not against them.",
+      quote: "Finally, supplements that work with renal diets. The detailed nutrient breakdowns make meal planning for kidney patients so much easier.",
       name: "Jennifer Chen",
       role: "Nutritionist"
     },
     {
       img: drRobertThompson,
-      quote: "After reviewing their quality control processes and third-party testing protocols, I'm confident recommending Renal Fusion to our hospital network. Their medical-grade approach to supplement manufacturing sets the gold standard in our field.",
+      quote: "After reviewing their quality protocols, I confidently recommend Renal Fusion to our hospital network. Medical-grade manufacturing at its finest.",
       name: "Dr. Robert Thompson",
       role: "Chief Medical Officer"
     },
     {
       img: lisaPark,
-      quote: "My clients with kidney health challenges finally have options that don't sacrifice results. The plant-based proteins deliver complete amino profiles while respecting their dietary restrictions. I've seen remarkable improvements in energy and overall wellness.",
+      quote: "My clients with kidney challenges love these plant-based proteins. Complete amino profiles that respect dietary restrictions and deliver results.",
       name: "Ryan Parker",
       role: "Wellness Coach"
     }

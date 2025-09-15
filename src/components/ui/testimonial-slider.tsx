@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Star } from "lucide-react";
 import { useImagePreload } from "@/hooks/useImagePreload";
 
 interface Testimonial {
@@ -43,7 +44,7 @@ export const TestimonialSlider = ({ testimonials }: TestimonialSliderProps) => {
   return (
     <div className="mx-auto w-full max-w-4xl text-center">
       {/* Avatar Section (redesigned layering, larger size) */}
-      <div className="relative mb-6 h-64 md:h-72 flex items-center justify-center">
+      <div className="relative mb-12 h-64 md:h-72 flex items-center justify-center">
         <div className="absolute -z-10 h-[520px] w-[520px] md:h-[640px] md:w-[640px] rounded-full bg-gradient-to-b from-primary/25 via-primary/10 to-transparent blur-3xl" />
 
         <AnimatePresence mode="wait">
@@ -84,6 +85,16 @@ export const TestimonialSlider = ({ testimonials }: TestimonialSliderProps) => {
 
                   <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-t from-primary/15 via-transparent to-transparent" />
                 </div>
+
+                {/* 5 Star Rating */}
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex gap-1">
+                  {[...Array(5)].map((_, starIndex) => (
+                    <Star 
+                      key={starIndex} 
+                      className="w-4 h-4 fill-yellow-400 text-yellow-400" 
+                    />
+                  ))}
+                </div>
               </motion.div>
             ) : null
           )}
@@ -103,8 +114,8 @@ export const TestimonialSlider = ({ testimonials }: TestimonialSliderProps) => {
                   exit={{ opacity: 0, x: 20 }}
                   transition={{ duration: 0.5, delay: 0.1, ease: "easeInOut" }}
                 >
-                  <div className="text-xl md:text-2xl font-bold text-foreground before:content-['\u201C'] after:content-['\u201D']">
-                    {testimonial.quote}
+                  <div className="text-xl md:text-2xl font-bold text-foreground italic">
+                    "{testimonial.quote}"
                   </div>
                 </motion.div>
               ) : null

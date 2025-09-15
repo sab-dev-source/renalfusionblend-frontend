@@ -14,32 +14,32 @@ export const TrustSection = () => {
   const testimonials = [
     {
       img: drSarahMitchell,
-      quote: "The ISOLATE whey protein has transformed my recovery time. As a nephrologist, I recommend Renal Fusion Blend to my patients seeking quality protein supplements.",
+      quote: "As a nephrologist with 15 years of experience, I've seen firsthand how proper protein intake affects kidney function. Renal Fusion's phosphorus-controlled formulas allow my CKD patients to maintain muscle mass safely. The clinical research behind their products is impressive.",
       name: "Dr. Sarah Mitchell",
       role: "Nephrologist"
     },
     {
       img: michaelRodriguez,
-      quote: "After years of kidney health concerns, finding a protein that's both effective and kidney-friendly has been life-changing. The BCAA+ formula is exceptional.",
+      quote: "Being diagnosed with Stage 3 CKD changed everything about my training. Renal Fusion's ISOLATE helped me stay competitive while managing my condition. My labs improved, and I can still push my limits in the gym. Game-changer for athlete-patients like me.",
       name: "Michael Rodriguez",
       role: "Personal Trainer & Patient"
     },
     {
       img: jennyferChen,
-      quote: "The Greens formula has improved my energy levels significantly. As someone managing kidney health, I appreciate the careful ingredient selection.",
+      quote: "I recommend Renal Fusion to clients with kidney concerns because their nutritional transparency is unmatched. The detailed phosphorus, potassium, and sodium breakdowns make meal planning so much easier. Finally, supplements that work with renal diets, not against them.",
       name: "Jennifer Chen",
       role: "Nutritionist"
     },
     {
       img: drRobertThompson,
-      quote: "Our medical equipment line complements the nutritional approach perfectly. Quality products that healthcare professionals can trust.",
+      quote: "After reviewing their quality control processes and third-party testing protocols, I'm confident recommending Renal Fusion to our hospital network. Their medical-grade approach to supplement manufacturing sets the gold standard in our field.",
       name: "Dr. Robert Thompson",
       role: "Chief Medical Officer"
     },
     {
       img: lisaPark,
-      quote: "The Vegan protein blend is outstanding. Finally, a plant-based option that doesn't compromise on taste or kidney-friendly formulation.",
-      name: "Lisa Park",
+      quote: "My clients with kidney health challenges finally have options that don't sacrifice results. The plant-based proteins deliver complete amino profiles while respecting their dietary restrictions. I've seen remarkable improvements in energy and overall wellness.",
+      name: "Ryan Parker",
       role: "Wellness Coach"
     }
   ];

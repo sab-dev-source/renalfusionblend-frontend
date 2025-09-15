@@ -4,6 +4,7 @@ import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { ProductCard } from "../components/ProductCard";
 import { Layout } from "../components/Layout";
+import { FlipText } from "../components/ui/flip-text";
 import { medicalEquipmentProducts } from "../data/products";
 
 export default function MedicalEquipment() {
@@ -16,13 +17,24 @@ export default function MedicalEquipment() {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">Medical Equipment</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl">
-            Professional-grade medical equipment for accurate health monitoring and diagnostics.
-          </p>
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-hero">
+        <div className="container-medical text-center">
+          <div className="max-w-3xl mx-auto">
+            <FlipText
+              word="Professional Medical Equipment"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-4"
+              delayMultiple={0.05}
+            />
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 px-4">
+              Professional-grade medical equipment for accurate health monitoring and diagnostics. 
+              Trusted by healthcare providers worldwide for reliable results and superior quality.
+            </p>
+          </div>
         </div>
+      </section>
+
+      <div className="container mx-auto px-4 py-8">
 
         {/* Search and Filters */}
         <div className="mb-8 flex flex-col sm:flex-row gap-4">

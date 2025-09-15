@@ -90,10 +90,10 @@ const Books = () => {
           <div className="max-w-3xl mx-auto">
             <FlipText
               word="Medical Education Library"
-              className="text-5xl font-bold text-white mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-4"
               delayMultiple={0.06}
             />
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 px-4">
               Comprehensive medical textbooks and resources written by leading healthcare professionals. 
               Available in both physical and digital formats for immediate access.
             </p>
@@ -119,11 +119,11 @@ const Books = () => {
       <section className="py-20">
         <div className="container-medical">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Dialysis Champions Book Series</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Evidence-based nephrology education by Rosemarie Zuleta MSN, BSN, CNN - 
-              <span className="text-primary font-semibold"> Over 15,000 copies sold worldwide</span>
-            </p>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 px-4">Dialysis Champions Book Series</h2>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
+            Evidence-based nephrology education by Rosemarie Zuleta MSN, BSN, CNN - 
+            <span className="text-primary font-semibold"> Over 15,000 copies sold worldwide</span>
+          </p>
           </div>
 
           {/* Conversion Banner */}

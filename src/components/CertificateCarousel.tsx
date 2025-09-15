@@ -78,10 +78,10 @@ export const CertificateCarousel = () => {
           <Badge variant="secondary" className="mb-4 px-4 py-2 text-sm font-medium">
             Professional Certifications
           </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-foreground px-4">
             Earn Accredited Medical Certificates
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Complete our accredited courses and receive professional certificates recognized by leading healthcare organizations.
           </p>
         </div>
@@ -129,10 +129,10 @@ export const CertificateCarousel = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-4 px-2">
                     {certificateData[currentIndex].title}
                   </h3>
-                  <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 leading-relaxed px-2">
                     {certificateData[currentIndex].description}
                   </p>
 

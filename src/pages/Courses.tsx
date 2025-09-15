@@ -104,10 +104,10 @@ const Courses = () => {
           <div className="max-w-3xl mx-auto">
             <FlipText
               word="Professional Medical Education"
-              className="text-5xl font-bold text-white mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 px-4"
               delayMultiple={0.05}
             />
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 px-4">
               Advance your career with accredited medical courses designed by leading healthcare experts. 
               Earn certificates and continuing education credits recognized by major medical organizations.
             </p>
@@ -136,10 +136,10 @@ const Courses = () => {
       <section className="py-20">
         <div className="container-medical">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Accredited Medical Courses</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive training programs for healthcare professionals seeking to enhance their expertise
-            </p>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 px-4">Accredited Medical Courses</h2>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+            Comprehensive training programs for healthcare professionals seeking to enhance their expertise
+          </p>
           </div>
 
           <div className="space-y-12">

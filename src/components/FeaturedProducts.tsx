@@ -60,10 +60,10 @@ export const FeaturedProducts = () => {
       <div className="container-medical">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 px-4">
             Trusted Medical Solutions
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Browse our comprehensive catalog of medical-grade products, educational courses, 
             and resources trusted by healthcare professionals worldwide.
           </p>

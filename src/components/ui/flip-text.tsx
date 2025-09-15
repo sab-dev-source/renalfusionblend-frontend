@@ -35,8 +35,8 @@ function FlipText({
     >
       <AnimatePresence mode="wait">
         {words.map((w, wi) => (
-          <>
-            <span key={`w-${wi}`} className="inline-flex">
+          <Fragment key={`word-${wi}`}>
+            <span className="inline-flex">
               {w.split("").map((char, ci) => (
                 <motion.span
                   key={`${wi}-${ci}`}
@@ -51,8 +51,12 @@ function FlipText({
                 </motion.span>
               ))}
             </span>
-            {wi < words.length - 1 ? " " : null}
-          </>
+            {wi < words.length - 1 && (
+              <span className="inline-block w-[0.25em]" aria-hidden="true">
+                &nbsp;
+              </span>
+            )}
+          </Fragment>
         ))}
       </AnimatePresence>
     </span>

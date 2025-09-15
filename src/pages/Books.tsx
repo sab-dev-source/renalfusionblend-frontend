@@ -87,7 +87,7 @@ const Books = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container-medical text-center">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
             <FlipText
               word="Medical Education Library"
               className="fluid-h1 font-bold text-white mb-6"

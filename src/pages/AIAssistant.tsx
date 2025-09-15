@@ -11,7 +11,7 @@ const AIAssistant = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container-medical text-center">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-6">
               <Bot className="h-8 w-8 text-white" />
             </div>

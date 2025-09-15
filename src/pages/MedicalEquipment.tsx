@@ -20,7 +20,7 @@ export default function MedicalEquipment() {
       {/* Hero Section */}
       <section className="hero-medical py-20">
         <div className="container-medical text-center">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto flex flex-col items-center">
             <FlipText
               word="Professional Medical Equipment"
               className="fluid-h1 font-bold text-white mb-6"

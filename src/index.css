@@ -273,12 +273,16 @@
     line-height: 1.15;
     letter-spacing: -0.01em;
     text-wrap: balance;
+    text-align: center;
+    width: 100%;
   }
 
   .fluid-subtitle {
     font-size: clamp(0.95rem, 2.8vw, 1.25rem);
     line-height: 1.6;
     text-wrap: pretty;
+    text-align: center;
+    width: 100%;
   }
 }
 

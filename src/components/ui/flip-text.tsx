@@ -28,7 +28,7 @@ function FlipText({
   return (
     <span
       className={cn(
-        "inline-flex flex-wrap items-baseline whitespace-normal break-words leading-tight",
+        "inline-flex flex-wrap items-baseline justify-center whitespace-normal break-words leading-tight text-center w-full",
         className
       )}
       aria-label={word}

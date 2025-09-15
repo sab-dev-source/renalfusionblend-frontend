@@ -14,7 +14,7 @@ const Login = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero">
         <div className="container-medical text-center">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto flex flex-col items-center">
             <FlipText
               word={isLogin ? "Welcome Back" : "Create Account"}
               className="fluid-h1 font-bold text-white mb-6"

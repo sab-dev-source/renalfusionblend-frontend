@@ -6,7 +6,7 @@ import { useCountUp } from "@/hooks/useCountUp";
 export const Hero = () => {
   const trustStats = [
     { icon: Users, label: "Healthcare Professionals", value: 10000, suffix: "+" },
-    { icon: Shield, label: "FDA Registered Products", value: 500, suffix: "+" },
+    { icon: Shield, label: "Quality Products", value: 500, suffix: "+" },
     { icon: Award, label: "Medical Certifications", value: 50, suffix: "+" },
   ];
 

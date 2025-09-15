@@ -142,7 +142,7 @@ export const MedicalCarousel = () => {
                   className="absolute bottom-3 left-3 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg z-30"
                   style={{ animationDelay: "1s" }}
                 >
-                  FDA Registered
+                  AI Powered
                 </div>
               </div>
             </CarouselItem>

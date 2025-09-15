@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Shield, Mail, Phone, MapPin } from "lucide-react";
+import { Heart, Shield, Mail, Phone, MapPin, Bot } from "lucide-react";
 import renalFusionLogo from "../assets/renal-fusion-logo.png";
 
 export const Footer = () => {
@@ -109,16 +109,16 @@ export const Footer = () => {
         </div>
 
         {/* Trust Badges */}
-        <div className="flex flex-wrap gap-4 mt-8 pt-8 border-t border-slate-700">
-          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-600">
-            <Shield className="h-4 w-4 text-blue-400" />
-            <span>FDA Registered</span>
+        <div className="flex flex-wrap justify-center gap-4 mt-12 pt-8 pb-4 border-t border-slate-700">
+          <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-600 hover:bg-slate-700 transition-colors">
+            <Bot className="h-4 w-4 text-blue-400" />
+            <span>AI Health Consultant</span>
           </div>
-          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-600">
+          <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-600 hover:bg-slate-700 transition-colors">
             <Heart className="h-4 w-4 text-red-400" />
             <span>Healthcare Professional Approved</span>
           </div>
-          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-600">
+          <div className="flex items-center gap-2 px-4 py-2.5 bg-slate-800 rounded-full text-sm text-slate-300 border border-slate-600 hover:bg-slate-700 transition-colors">
             <Shield className="h-4 w-4 text-green-400" />
             <span>Secure Checkout</span>
           </div>

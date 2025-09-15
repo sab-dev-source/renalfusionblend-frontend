@@ -56,7 +56,7 @@ export const FeaturedProducts = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-subtle">
+    <section id="medical-solutions" className="py-16 bg-gradient-subtle">
       <div className="container-medical">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -139,13 +139,13 @@ export const FeaturedProducts = () => {
         {/* CTA Section */}
         <div className="text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4">
-            <Link to="/ai-assistant" className="btn-medical text-lg px-8 py-4">
-              Get AI Health Guidance
+            <Link to="/ai-consultant" className="btn-medical text-lg px-8 py-4">
+              Get AI Health Consultation
               <ArrowRight className="h-5 w-5 ml-2" />
             </Link>
           </div>
           <p className="text-sm text-muted-foreground mt-4">
-            Need help choosing? Our AI assistant provides personalized recommendations 24/7
+            Need help choosing? Our AI consultant provides personalized recommendations 24/7
           </p>
         </div>
       </div>

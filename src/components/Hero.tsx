@@ -55,12 +55,18 @@ export const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/products" className="btn-accent text-lg px-8 py-4">
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('medical-solutions');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="btn-accent text-lg px-8 py-4"
+              >
                 Shop Products
                 <ArrowRight className="h-5 w-5 ml-2" />
-              </Link>
-              <Link to="/ai-assistant" className="btn-outline text-lg px-8 py-4 text-white border-white hover:bg-white hover:text-primary">
-                Get AI Health Guidance
+              </button>
+              <Link to="/ai-consultant" className="btn-outline text-lg px-8 py-4 text-white border-white hover:bg-white hover:text-primary">
+                Get AI Health Consultation
               </Link>
             </div>
 

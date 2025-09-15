@@ -12,7 +12,7 @@ import { ScrollToTopOnMount } from "./components/ScrollToTopOnMount";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import MedicalEquipment from "./pages/MedicalEquipment";
-import AIAssistant from "./pages/AIAssistant";
+import AIConsultant from "./pages/AIConsultant";
 import NotFound from "./pages/NotFound";
 import Books from "./pages/Books";
 import Courses from "./pages/Courses";
@@ -52,7 +52,7 @@ const App = () => {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/checkout" element={<Checkout />} />
-                <Route path="/ai-assistant" element={<AIAssistant />} />
+                <Route path="/ai-consultant" element={<AIConsultant />} />
                 <Route path="/books" element={<Books />} />
                 <Route path="/courses" element={<Courses />} />
                 <Route path="/contact" element={<Contact />} />

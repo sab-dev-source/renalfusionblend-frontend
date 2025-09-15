@@ -5,7 +5,7 @@ import FileUploadChat from "../components/ui/file-upload-and-chat";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const AIAssistant = () => {
+const AIConsultant = () => {
   return (
     <Layout>
       {/* Hero Section */}
@@ -16,12 +16,12 @@ const AIAssistant = () => {
               <Bot className="h-8 w-8 text-white" />
             </div>
             <FlipText
-              word="AI Health Assistant"
+              word="AI Health Consultant"
               className="fluid-h1 font-bold text-white mb-6"
               delayMultiple={0.08}
             />
             <p className="fluid-subtitle text-white/90 mb-8 px-4">
-              Get personalized health guidance and product recommendations from our advanced AI assistant.
+              Get personalized health guidance and product recommendations from our advanced AI consultant.
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ const AIAssistant = () => {
               <div>
                 <p className="font-medium text-orange-800 dark:text-orange-200 mb-2">Important Medical Disclaimer</p>
                 <ul className="text-sm text-orange-700 dark:text-orange-300 space-y-1">
-                  <li>• This AI assistant provides general health information only</li>
+                  <li>• This AI consultant provides general health information only</li>
                   <li>• Not a substitute for professional medical advice, diagnosis, or treatment</li>
                   <li>• For emergencies, call 911 immediately</li>
                   <li>• Always consult your healthcare provider for medical concerns</li>
@@ -114,4 +114,4 @@ const AIAssistant = () => {
   );
 };
 
-export default AIAssistant;
+export default AIConsultant;

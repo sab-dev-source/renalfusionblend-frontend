@@ -3,7 +3,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 // Import medical images
-import medicalAnatomy from "@/assets/medical-anatomy.png";
 import kidneyComparison from "@/assets/kidney-comparison.png";
 import doctorConsultation from "@/assets/doctor-consultation.png";
 import medicalEcosystem from "@/assets/medical-ecosystem.png";
@@ -14,12 +13,6 @@ export const MedicalCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const medicalImages = [
-    {
-      src: medicalAnatomy,
-      alt: "Dialysis champions through power of knowledge and evidence-based research",
-      title: "Evidence-Based Research",
-      description: "Advanced medical solutions backed by scientific research"
-    },
     {
       src: kidneyComparison,
       alt: "Healthy vs diseased kidney comparison",
@@ -61,18 +54,18 @@ export const MedicalCarousel = () => {
   }, [medicalImages.length]);
 
   return (
-    <div className="relative px-0 py-10 md:py-14">
-      <Carousel className="w-full max-w-4xl lg:max-w-5xl mx-auto">
-        <CarouselContent className="-ml-2 md:-ml-4">
+    <div className="relative px-0 py-12 md:py-16">
+      <Carousel className="w-full max-w-6xl lg:max-w-7xl mx-auto">
+        <CarouselContent className="-ml-3 md:-ml-6">
           {medicalImages.map((image, index) => (
-            <CarouselItem key={index} className="pl-2 md:pl-4">
+            <CarouselItem key={index} className="pl-3 md:pl-6">
               <div className="relative group">
                 {/* Image Container - Increased size and better aspect ratio */}
-                <div className="aspect-[16/9] sm:aspect-[4/3] lg:aspect-[16/9] w-full rounded-2xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
+                <div className="aspect-[3/2] sm:aspect-[4/3] lg:aspect-[3/2] w-full rounded-3xl overflow-hidden bg-white/10 backdrop-blur-sm border border-white/20 shadow-2xl">
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

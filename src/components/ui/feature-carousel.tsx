@@ -58,7 +58,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
           </div>
 
           {/* Main Showcase Section */}
-          <div className="relative w-full h-[350px] md:h-[450px] flex items-center justify-center">
+          <div className="relative w-full h-[400px] md:h-[500px] flex items-center justify-center">
             {/* Carousel Wrapper */}
             <div className="relative w-full h-full flex items-center justify-center [perspective:1000px]">
               {images.map((image, index) => {
@@ -76,7 +76,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
                   <div
                     key={index}
                     className={cn(
-                      'absolute w-48 h-96 md:w-64 md:h-[450px] transition-all duration-500 ease-in-out',
+                      'absolute w-64 h-80 md:w-80 md:h-96 transition-all duration-500 ease-in-out',
                       'flex items-center justify-center'
                     )}
                     style={{
@@ -94,7 +94,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="object-cover w-full h-full rounded-3xl border-2 border-foreground/10 shadow-2xl"
+                      className="object-contain w-full h-full rounded-3xl border-2 border-foreground/10 shadow-2xl bg-card/20 backdrop-blur-sm"
                     />
                   </div>
                 );

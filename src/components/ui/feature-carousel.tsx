@@ -76,7 +76,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
                   <div
                     key={index}
                     className={cn(
-                      'absolute w-64 h-64 md:w-80 md:h-80 transition-all duration-500 ease-in-out',
+                      'absolute w-64 md:w-96 aspect-[3/2] transition-all duration-500 ease-in-out',
                       'flex items-center justify-center overflow-hidden'
                     )}
                     style={{
@@ -94,7 +94,7 @@ export const HeroSection = React.forwardRef<HTMLDivElement, HeroProps>(
                     <img
                       src={image.src}
                       alt={image.alt}
-                      className="object-cover w-full h-full rounded-3xl shadow-2xl"
+                      className="object-contain w-full h-full rounded-3xl shadow-2xl"
                     />
                   </div>
                 );

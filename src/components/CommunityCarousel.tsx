@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from './ui/badge';
+import { ConversionBanner } from './ConversionBanner';
 import doctorWoman from '../assets/community/doctor-woman.png';
 import doctorMan from '../assets/community/doctor-man.png';
 import elderlyWoman from '../assets/community/elderly-woman.png';
@@ -97,19 +98,9 @@ export const CommunityCarousel = () => {
         </div>
 
 
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="inline-flex items-center space-x-4 bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold hover:bg-primary-hover transition-colors cursor-pointer"
-          >
-            <span>Start Your Journey Today</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </motion.div>
+        {/* Conversion Banner */}
+        <div className="mt-12">
+          <ConversionBanner />
         </div>
       </div>
     </div>

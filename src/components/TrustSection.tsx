@@ -45,44 +45,44 @@ export const TrustSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-muted/30 to-background">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-muted/30 to-background">
       <div className="container-medical">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Trusted by Healthcare Professionals
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             See what medical experts and satisfied customers say about Renal Fusion Blend products.
           </p>
         </div>
 
         {/* Testimonial Slider */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <TestimonialSlider testimonials={testimonials} />
         </div>
 
         {/* Trust Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="p-6 rounded-2xl bg-card border border-card-border">
-            <div className="text-4xl font-bold text-primary mb-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 text-center px-4">
+          <div className="p-4 sm:p-6 rounded-2xl bg-card border border-card-border">
+            <div className="text-3xl sm:text-4xl font-bold text-primary mb-2">
               <span ref={countRef1}>0</span>
             </div>
-            <div className="text-muted-foreground">Happy Customers</div>
+            <div className="text-sm sm:text-base text-muted-foreground">Happy Customers</div>
           </div>
           
-          <div className="p-6 rounded-2xl bg-card border border-card-border">
-            <div className="text-4xl font-bold text-success mb-2">
+          <div className="p-4 sm:p-6 rounded-2xl bg-card border border-card-border">
+            <div className="text-3xl sm:text-4xl font-bold text-success mb-2">
               <span ref={countRef2}>0</span>%
             </div>
-            <div className="text-muted-foreground">Satisfaction Rate</div>
+            <div className="text-sm sm:text-base text-muted-foreground">Satisfaction Rate</div>
           </div>
           
-          <div className="p-6 rounded-2xl bg-card border border-card-border">
-            <div className="text-4xl font-bold text-accent mb-2">
+          <div className="p-4 sm:p-6 rounded-2xl bg-card border border-card-border sm:col-span-2 md:col-span-1">
+            <div className="text-3xl sm:text-4xl font-bold text-accent mb-2">
               <span ref={countRef3}>0</span>
             </div>
-            <div className="text-muted-foreground">Healthcare Partners</div>
+            <div className="text-sm sm:text-base text-muted-foreground">Healthcare Partners</div>
           </div>
         </div>
       </div>

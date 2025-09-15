@@ -1,5 +1,10 @@
 import { useCountUp } from "@/hooks/useCountUp";
 import { TestimonialSlider } from "./ui/testimonial-slider";
+import doctorWoman from "@/assets/community/doctor-woman.png";
+import manDrinking from "@/assets/community/man-drinking.png";
+import athleticWoman from "@/assets/community/athletic-woman.png";
+import doctorMan from "@/assets/community/doctor-man.png";
+import elderlyWoman from "@/assets/community/elderly-woman.png";
 
 export const TrustSection = () => {
   const countRef1 = useCountUp(15000);
@@ -8,31 +13,31 @@ export const TrustSection = () => {
 
   const testimonials = [
     {
-      img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
+      img: doctorWoman,
       quote: "The ISOLATE whey protein has transformed my recovery time. As a nephrologist, I recommend Renal Fusion Blend to my patients seeking quality protein supplements.",
       name: "Dr. Sarah Mitchell",
       role: "Nephrologist"
     },
     {
-      img: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
+      img: manDrinking,
       quote: "After years of kidney health concerns, finding a protein that's both effective and kidney-friendly has been life-changing. The BCAA+ formula is exceptional.",
       name: "Michael Rodriguez",
       role: "Personal Trainer & Patient"
     },
     {
-      img: "https://images.unsplash.com/photo-1594824804732-5f670d9a5933?w=400&h=400&fit=crop&crop=face",
+      img: athleticWoman,
       quote: "The Greens formula has improved my energy levels significantly. As someone managing kidney health, I appreciate the careful ingredient selection.",
       name: "Jennifer Chen",
       role: "Nutritionist"
     },
     {
-      img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
+      img: doctorMan,
       quote: "Our medical equipment line complements the nutritional approach perfectly. Quality products that healthcare professionals can trust.",
       name: "Dr. Robert Thompson",
       role: "Chief Medical Officer"
     },
     {
-      img: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face",
+      img: elderlyWoman,
       quote: "The Vegan protein blend is outstanding. Finally, a plant-based option that doesn't compromise on taste or kidney-friendly formulation.",
       name: "Lisa Park",
       role: "Wellness Coach"

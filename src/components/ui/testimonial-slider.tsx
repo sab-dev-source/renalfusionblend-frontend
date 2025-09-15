@@ -58,18 +58,19 @@ export const TestimonialSlider = ({ testimonials }: TestimonialSliderProps) => {
                       ease: [0.68, -0.3, 0.32, 1]
                     }}
                   >
-                    <div className="relative">
+                    <div className="relative group">
+                      <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-full blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
                       <img
-                        className="rounded-full w-32 h-32 object-cover border-6 border-primary/30 shadow-2xl shadow-primary/20 ring-4 ring-white/10"
+                        className="relative rounded-full w-40 h-40 object-cover border-4 border-background shadow-2xl shadow-primary/30 ring-2 ring-primary/20 transform transition-all duration-300 group-hover:scale-105"
                         src={testimonial.img}
                         alt={`${testimonial.name} - ${testimonial.role}`}
                         loading="eager"
                         onError={(e) => {
                           console.warn(`Failed to load image for ${testimonial.name}`);
-                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23374151' font-family='Arial, sans-serif' font-size='16'%3E${testimonial.name.split(' ').map(n => n[0]).join('')}%3C/text%3E%3C/svg%3E";
                         }}
                       />
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-t from-primary/20 via-transparent to-transparent pointer-events-none"></div>
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none"></div>
                     </div>
                   </motion.div>
                 )

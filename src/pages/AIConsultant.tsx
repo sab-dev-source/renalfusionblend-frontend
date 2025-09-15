@@ -30,10 +30,6 @@ const AIConsultant = () => {
       src: aiMedicalRobot,
       alt: "Advanced AI medical robot assistant for renal health consultation",
     },
-    {
-      src: aiInterfaceTouch,
-      alt: "Futuristic medical interface with AI-powered renal health analytics",
-    },
   ];
 
   const carouselTitle = (

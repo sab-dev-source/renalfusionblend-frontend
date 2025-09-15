@@ -21,13 +21,12 @@ export const Footer = () => {
     legal: [
       { name: "Privacy Policy", href: "/privacy" },
       { name: "Terms of Service", href: "/terms" },
-      { name: "Medical Disclaimer", href: "/disclaimer" },
       { name: "Refund Policy", href: "/refunds" },
     ],
   };
 
   return (
-    <footer className="bg-muted border-t border-card-border">
+    <footer className="bg-slate-900 text-slate-100 border-t border-slate-700">
       <div className="container-medical py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -35,22 +34,22 @@ export const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-4">
               <img src={renalFusionLogo} alt="Renal Fusion Blend" className="h-10 w-10" />
-              <span className="text-xl font-bold text-gradient">Renal Fusion Blend</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Renal Fusion Blend</span>
             </Link>
-            <p className="text-muted-foreground mb-6 max-w-md">
+            <p className="text-slate-300 mb-6 max-w-md">
               Trusted medical-grade products and education for healthcare professionals and patients. 
               Evidence-based solutions for optimal health outcomes.
             </p>
             <div className="space-y-2">
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-2 text-sm text-slate-400">
                 <MapPin className="h-4 w-4" />
                 <span>Medical District, Healthcare Plaza</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-2 text-sm text-slate-400">
                 <Phone className="h-4 w-4" />
                 <span>+1 (555) 123-CARE</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-2 text-sm text-slate-400">
                 <Mail className="h-4 w-4" />
                 <span>support@renalfusionblend.com</span>
               </div>
@@ -59,13 +58,13 @@ export const Footer = () => {
 
           {/* Products */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Products</h3>
+            <h3 className="font-semibold text-white mb-4">Products</h3>
             <ul className="space-y-2">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.href} 
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-slate-300 hover:text-blue-400 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -76,13 +75,13 @@ export const Footer = () => {
 
           {/* Education */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Education</h3>
+            <h3 className="font-semibold text-white mb-4">Education</h3>
             <ul className="space-y-2">
               {footerLinks.education.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.href} 
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-slate-300 hover:text-blue-400 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -93,13 +92,13 @@ export const Footer = () => {
 
           {/* Support */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Support</h3>
+            <h3 className="font-semibold text-white mb-4">Support</h3>
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <Link 
                     to={link.href} 
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-slate-300 hover:text-blue-400 transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -109,40 +108,25 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Medical Disclaimer */}
-        <div className="bg-orange-50 dark:bg-orange-950/20 border border-orange-200 dark:border-orange-800 rounded-lg p-4 mt-8">
-          <div className="flex items-start space-x-2">
-            <Shield className="h-5 w-5 text-orange-600 mt-0.5 flex-shrink-0" />
-            <div>
-              <p className="font-medium text-orange-800 dark:text-orange-200 mb-1">Medical Disclaimer</p>
-              <p className="text-sm text-orange-700 dark:text-orange-300">
-                The information provided on this website is for educational purposes only and is not intended 
-                to diagnose, treat, cure, or prevent any disease. Always consult with a qualified healthcare 
-                professional before making any changes to your treatment regimen.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Trust Badges */}
-        <div className="flex flex-wrap gap-4 mt-8 pt-8 border-t border-card-border">
-          <div className="trust-badge">
-            <Shield className="h-4 w-4" />
+        <div className="flex flex-wrap gap-4 mt-8 pt-8 border-t border-slate-700">
+          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-600">
+            <Shield className="h-4 w-4 text-blue-400" />
             <span>FDA Registered</span>
           </div>
-          <div className="trust-badge">
-            <Heart className="h-4 w-4" />
+          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-600">
+            <Heart className="h-4 w-4 text-red-400" />
             <span>Healthcare Professional Approved</span>
           </div>
-          <div className="trust-badge">
-            <Shield className="h-4 w-4" />
+          <div className="flex items-center gap-2 px-3 py-1.5 bg-slate-800 rounded-full text-xs text-slate-300 border border-slate-600">
+            <Shield className="h-4 w-4 text-green-400" />
             <span>Secure Checkout</span>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-card-border">
-          <p className="text-sm text-foreground font-medium">
+        <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-slate-700">
+          <p className="text-sm text-slate-300 font-medium">
             © 2024 Renal Fusion Blend. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
@@ -150,7 +134,7 @@ export const Footer = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-sm text-foreground hover:text-primary transition-colors font-medium"
+                className="text-sm text-slate-300 hover:text-blue-400 transition-colors font-medium"
               >
                 {link.name}
               </Link>

@@ -2,13 +2,45 @@ import { Layout } from "../components/Layout";
 import { Send, Bot, User, AlertTriangle, Shield, Clock } from "lucide-react";
 import { FlipText } from "../components/ui/flip-text";
 import FileUploadChat from "../components/ui/file-upload-and-chat";
+import { HeroSection } from "../components/ui/feature-carousel";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
+// Import AI medical images
+import aiMedicalDashboard from "../assets/ai-medical-dashboard.png";
+import aiKidneyChat from "../assets/ai-kidney-chat.png";
+import aiMedicalRobot from "../assets/ai-medical-robot.png";
+import aiInterfaceTouch from "../assets/ai-interface-touch.png";
 
 const AIConsultant = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  const aiImages = [
+    {
+      src: aiMedicalDashboard,
+      alt: "AI Medical Dashboard with kidney health monitoring and analytics",
+    },
+    {
+      src: aiKidneyChat,
+      alt: "Interactive AI chat interface with kidney health visualization",
+    },
+    {
+      src: aiMedicalRobot,
+      alt: "Advanced AI medical robot assistant for renal health consultation",
+    },
+    {
+      src: aiInterfaceTouch,
+      alt: "Futuristic medical interface with AI-powered renal health analytics",
+    },
+  ];
+
+  const carouselTitle = (
+    <>
+      Advanced <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">AI Technology</span> for Your Health
+    </>
+  );
   return (
     <Layout>
       {/* Hero Section */}
@@ -113,6 +145,14 @@ const AIConsultant = () => {
           </div>
         </div>
       </div>
+
+      {/* AI Technology Showcase */}
+      <HeroSection
+        title={carouselTitle}
+        subtitle="Experience cutting-edge AI technology designed specifically for renal health consultation and medical guidance."
+        images={aiImages}
+        className="min-h-[80vh] bg-gradient-subtle"
+      />
     </Layout>
   );
 };

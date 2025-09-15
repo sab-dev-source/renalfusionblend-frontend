@@ -14,6 +14,7 @@ import doctorConsultation from "@/assets/doctor-consultation.png";
 import medicalEcosystem from "@/assets/medical-ecosystem.png";
 import medicalTeam from "@/assets/medical-team.png";
 import kidneyDna from "@/assets/kidney-dna.png";
+import renalFusionAI from "@/assets/renal-fusion-ai-interface.png";
 
 export const MedicalCarousel = () => {
   const [api, setApi] = useState<CarouselApi | null>(null);
@@ -27,6 +28,12 @@ export const MedicalCarousel = () => {
 
   const medicalImages = useMemo(
     () => [
+      {
+        src: renalFusionAI,
+        alt: "Renal Fusion Blend AI interface with health analytics",
+        title: "AI Health Analytics",
+        description: "Advanced AI-powered renal health monitoring and statistics",
+      },
       {
         src: kidneyComparison,
         alt: "Healthy vs diseased kidney comparison",
@@ -105,22 +112,22 @@ export const MedicalCarousel = () => {
   }, [api, currentIndex]);
 
   return (
-    <div className="relative px-3 md:px-6 py-12 md:py-16">
+    <div className="relative px-4 md:px-8 py-16 md:py-20">
       <Carousel
         opts={{ loop: true }}
         setApi={setApi}
-        className="w-full max-w-7xl 2xl:max-w-[1400px] mx-auto"
+        className="w-full max-w-[1600px] 2xl:max-w-[1800px] mx-auto"
       >
-        <CarouselContent className="-ml-3 md:-ml-6">
+        <CarouselContent className="-ml-4 md:-ml-8">
           {medicalImages.map((image, index) => (
-            <CarouselItem key={index} className="pl-3 md:pl-6">
+            <CarouselItem key={index} className="pl-4 md:pl-8">
               <div className="relative group">
-                {/* Image Container - Larger, immersive visuals */}
-                <div className="aspect-[16/9] w-full rounded-3xl overflow-hidden bg-card/50 border border-white/20 shadow-2xl">
+                {/* Image Container - Much larger, immersive visuals */}
+                <div className="aspect-[5/3] lg:aspect-[5/3] xl:aspect-[5/3] w-full rounded-3xl overflow-hidden bg-card/50 border border-white/20 shadow-2xl">
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                     loading={index === 0 ? "eager" : "lazy"}
                   />
 
@@ -128,18 +135,18 @@ export const MedicalCarousel = () => {
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   {/* Content Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-lg md:text-xl font-semibold mb-2">{image.title}</h3>
-                    <p className="text-sm md:text-base text-white/90">{image.description}</p>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-3">{image.title}</h3>
+                    <p className="text-base md:text-lg text-white/90">{image.description}</p>
                   </div>
                 </div>
 
                 {/* Floating Medical Badges */}
-                <div className="absolute top-3 right-3 bg-accent text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg z-30">
+                <div className="absolute top-4 right-4 bg-accent text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg z-30">
                   Medical Grade
                 </div>
                 <div
-                  className="absolute bottom-3 left-3 bg-primary text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg z-30"
+                  className="absolute bottom-4 left-4 bg-primary text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg z-30"
                   style={{ animationDelay: "1s" }}
                 >
                   FDA Registered
@@ -150,12 +157,12 @@ export const MedicalCarousel = () => {
         </CarouselContent>
 
         {/* Custom Navigation (fully functional) */}
-        <CarouselPrevious className="z-30 absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30 backdrop-blur-sm" />
-        <CarouselNext className="z-30 absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30 backdrop-blur-sm" />
+        <CarouselPrevious className="z-30 absolute left-6 top-1/2 -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30 backdrop-blur-sm w-12 h-12" />
+        <CarouselNext className="z-30 absolute right-6 top-1/2 -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30 backdrop-blur-sm w-12 h-12" />
       </Carousel>
 
       {/* Carousel Indicators (fully functional) */}
-      <div className="flex justify-center mt-6 gap-2">
+      <div className="flex justify-center mt-8 gap-3">
         {medicalImages.map((_, index) => {
           const isActive = currentIndex === index;
           return (
@@ -164,8 +171,8 @@ export const MedicalCarousel = () => {
               onClick={() => api?.scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}
               aria-current={isActive}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                isActive ? "bg-white w-6" : "bg-white/50 hover:bg-white/70 w-2"
+              className={`h-3 rounded-full transition-all duration-300 ${
+                isActive ? "bg-white w-8" : "bg-white/50 hover:bg-white/70 w-3"
               }`}
             />
           );
@@ -173,9 +180,9 @@ export const MedicalCarousel = () => {
       </div>
 
       {/* Real Progress Bar tied to autoplay */}
-      <div className="mt-4 w-full max-w-7xl 2xl:max-w-[1400px] mx-auto bg-white/20 rounded-full h-1 overflow-hidden">
+      <div className="mt-6 w-full max-w-[1600px] 2xl:max-w-[1800px] mx-auto bg-white/20 rounded-full h-1.5 overflow-hidden">
         <div
-          className="bg-accent h-1 rounded-full transition-[width] duration-100 ease-linear"
+          className="bg-accent h-1.5 rounded-full transition-[width] duration-100 ease-linear"
           style={{ width: `${progress}%` }}
           aria-hidden
         />

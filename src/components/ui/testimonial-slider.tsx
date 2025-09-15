@@ -41,28 +41,36 @@ export const TestimonialSlider = ({ testimonials }: TestimonialSliderProps) => {
   return (
     <div className="mx-auto w-full max-w-4xl text-center">
       {/* Avatar Section */}
-      <div className="relative h-32">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-[480px] w-[480px] -translate-x-1/2 before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-primary/25 before:via-primary/5 before:via-25% before:to-primary/0 before:to-75%">
-          <div className="h-32 [mask-image:_linear-gradient(0deg,transparent,white_20%,white)]">
+      <div className="relative h-48 mb-4">
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[600px] -translate-x-1/2 before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-b before:from-primary/30 before:via-primary/10 before:via-25% before:to-primary/0 before:to-75%">
+          <div className="h-48 [mask-image:_linear-gradient(0deg,transparent,white_15%,white)]">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 active === index && (
                   <motion.div
                     key={index}
-                    className="absolute inset-0 -z-10 h-full"
-                    initial={{ opacity: 0, rotate: -60 }}
-                    animate={{ opacity: 1, rotate: 0 }}
-                    exit={{ opacity: 0, rotate: 60 }}
+                    className="absolute inset-0 -z-10 h-full flex items-center justify-center"
+                    initial={{ opacity: 0, rotate: -60, scale: 0.8 }}
+                    animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                    exit={{ opacity: 0, rotate: 60, scale: 0.8 }}
                     transition={{
                       duration: 0.7,
                       ease: [0.68, -0.3, 0.32, 1]
                     }}
                   >
-                    <img
-                      className="relative left-1/2 top-11 -translate-x-1/2 rounded-full w-14 h-14 object-cover border-4 border-primary/20"
-                      src={testimonial.img}
-                      alt={testimonial.name}
-                    />
+                    <div className="relative">
+                      <img
+                        className="rounded-full w-32 h-32 object-cover border-6 border-primary/30 shadow-2xl shadow-primary/20 ring-4 ring-white/10"
+                        src={testimonial.img}
+                        alt={`${testimonial.name} - ${testimonial.role}`}
+                        loading="eager"
+                        onError={(e) => {
+                          console.warn(`Failed to load image for ${testimonial.name}`);
+                          e.currentTarget.style.display = 'none';
+                        }}
+                      />
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-t from-primary/20 via-transparent to-transparent pointer-events-none"></div>
+                    </div>
                   </motion.div>
                 )
               ))}

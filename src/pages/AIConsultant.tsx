@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import aiMedicalDashboard from "../assets/ai-medical-dashboard.png";
 import aiKidneyChat from "../assets/ai-kidney-chat.png";
 import aiMedicalRobot from "../assets/ai-medical-robot.png";
-import aiInterfaceTouch from "../assets/ai-interface-touch.png";
+import aiInterfaceTouch from "../assets/ai-interface-touch-new.png";
 
 const AIConsultant = () => {
   useEffect(() => {
